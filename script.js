@@ -33,11 +33,11 @@ function rollD100() {
         var resultText = 'Resultado do d100: ' + d100Roll;
 
         if (d100Roll >= successThreshold) {
-            resultText += 'Sucesso!';
+            resultText += ' - Sucesso!';
         }
 
         if (d100Roll <= goodThreshold) {
-            resultText += 'Bom!';
+            resultText += ' - Bom!';
         }
 
         d100ResultElement.textContent = resultText;
