@@ -16,7 +16,7 @@ function rollD100() {
         d100ResultElement.textContent = 'Digite um numero valido.';
     } else {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
-        var TriumphThreshold = d100Input = 1 // Quando o dado é igual a 1
+        var TriumphThreshold = 1; // Quando o dado é igual a 1
         var minusExtremeThreshold = d100Input * 0.02; // 2% do número obtido
         var plusExtremeThreshold = d100Input * 0.25; // 25% do número obtido
         var minusGoodThreshold = d100Input * 0.26; // 26% do número obtido
@@ -30,23 +30,23 @@ function rollD100() {
         var resultText = 'Resultado: ' + d100Roll;
 
 
-        if (minusNormalThreshold <= d100Roll >= plusNormalThreshold) {
+        if (d100Roll >= minusNormalThreshold && d100Roll >= plusNormalThreshold) {
             resultText += ' - Normal';
         }
 
-        if (minusGoodThreshold <= d100Roll >= plusGoodThreshold) {
+        if (d100Roll >= minusGoodThreshold && d100Roll >= plusGoodThreshold) {
             resultText += ' - Bom';
         }
 
-        if (minusExtremeThreshold <= d100Roll <= plusExtremeThreshold) {
+        if (d100Roll >= minusExtremeThreshold && d100Roll <= plusExtremeThreshold) {
             resultText += ' - Extremo';
         }
 
-        if (TriumphThreshold = d100Roll = TriumphThreshold) {
+        if (d100Roll === TriumphThreshold) {
             resultText += ' - Triunfo!!! 👑';
         } 
 
-        if (minusTinyFailure <= d100Roll >= plusTinyFailure) {
+        if (d100Roll >= minusTinyFailure && d100Roll >= plusTinyFailure) {
             resultText += ' - Pequena Falha';
         }
 
