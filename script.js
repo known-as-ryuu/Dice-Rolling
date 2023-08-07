@@ -41,11 +41,11 @@ function rollD100() {
         console.log(d100Roll)
         if (d100Roll === TriumphThreshold) {
             resultText += ' - Triunfo!!! 👑';
-        } else if (d100Roll >= minusBigFailureThreshold) {
+        } else if (d100Roll >= minusBigFailureThreshold <= plusBigFailureThreshold) {
             resultText += ' - Grande Falha';
-        } else if (d100Roll >= minusFailureThreshold) {
+        } else if (d100Roll >= minusFailureThreshold <= plusFailureThreshold) {
             resultText += ' - Falha';
-        } else if (d100Roll >= minusTinyFailureThreshold) {
+        } else if (d100Roll >= minusTinyFailureThreshold <= plusTinyFailureThreshold) {
             resultText += ' - Pequena Falha';
         } else if (d100Roll >= minusExtremeThreshold && d100Roll <= plusExtremeThreshold) {
             resultText += ' - Extremo';
