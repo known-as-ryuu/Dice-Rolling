@@ -7,18 +7,7 @@ function rollDice(sides) {
 
     resultElement.style.display = 'block';
 }
-function calculate() {
-    var inputNumber = parseInt(document.getElementById('inputNumber').value);
-    var calcResultElement = document.getElementById('calcResult');
 
-    if (isNaN(inputNumber)) {
-        calcResultElement.textContent = 'Number';
-    } else {
-        var result = inputNumber * 2; // Exemplo de cálculo simples
-        calcResultElement.textContent = 'Resultado do cálculo: ' + result;
-f
-    }
-}
 function rollD100() {
     var d100Input = parseInt(document.getElementById('d100Input').value);
     var d100ResultElement = document.getElementById('d100Result');
@@ -30,7 +19,7 @@ function rollD100() {
         var successThreshold = d100Input * 0.5; // 50% do número dado
         var goodThreshold = d100Input * 0.2; // 20% do número dado
 
-        var resultText = 'Resultado do d100: ' + d100Roll;
+        var resultText = 'Resultado: ' + d100Roll;
 
         if (d100Roll >= successThreshold) {
             resultText += ' - Sucesso!';
