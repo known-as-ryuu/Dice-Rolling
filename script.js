@@ -59,4 +59,3 @@ function rollD100() {
 
         d100ResultElement.textContent = resultText;
     }
-}
