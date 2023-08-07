@@ -3,7 +3,7 @@ function rollDice(sides) {
     var rolledNumberElement = document.getElementById('rolledNumber');
 
     var result = Math.floor(Math.random() * sides) + 1;
-    rolledNumberElement.textContent = 'Número Rolado: ' + result + ' (' + sides + ' faces)';
+    rolledNumberElement.textContent = 'Resultado: ' + result + ' (' + sides + ' faces)';
 
     resultElement.style.display = 'block';
 }
