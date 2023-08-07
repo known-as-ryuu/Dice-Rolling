@@ -37,25 +37,18 @@ function rollD100() {
 
         if (d100Roll === TriumphThreshold) {
             resultText += ' - Triunfo!!! 👑';
-
-        } else if (d100Roll >= minusExtremeThreshold && d100Roll <= plusExtremeThreshold) {
-            resultText += ' - Extremo';
-
-        } else if (d100Roll >= minusGoodThreshold && d100Roll <= plusGoodThreshold) {
-            resultText += ' - Bom';
-
-        } else if (d100Roll >= minusNormalThreshold && d100Roll <= plusNormalThreshold) {
-            resultText += ' - Normal';
-
-        } else if (d100Roll >= minusTinyFailureThreshold) {
-            resultText += ' - Pequena Falha';
-
-        } else if (d100Roll >= minusFailureThreshold) {
-            resultText += ' - Falha';
-
         } else if (d100Roll >= minusBigFailureThreshold) {
             resultText += ' - Grande Falha';
-
+        } else if (d100Roll >= minusFailureThreshold) {
+            resultText += ' - Falha';
+        } else if (d100Roll >= minusTinyFailureThreshold) {
+            resultText += ' - Pequena Falha';
+        } else if (d100Roll >= minusExtremeThreshold && d100Roll <= plusExtremeThreshold) {
+            resultText += ' - Extremo';
+        } else if (d100Roll >= minusGoodThreshold && d100Roll <= plusGoodThreshold) {
+            resultText += ' - Bom';
+        } else if (d100Roll >= minusNormalThreshold && d100Roll <= plusNormalThreshold) {
+            resultText += ' - Normal';
         } else if (d100Roll === DisasterThreshold) {
             resultText += ' - Desastre!!! ⚰️';
         }
