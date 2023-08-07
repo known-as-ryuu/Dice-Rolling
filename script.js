@@ -13,20 +13,20 @@ function rollD100() {
     var d100ResultElement = document.getElementById('d100Result');
 
     if (isNaN(d100Input)) {
-        d100ResultElement.textContent = 'Number';
+        d100ResultElement.textContent = 'Digite um número válido.';
     } else {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
+        var goodThreshold = d100Input * 0.26; // 26% do número dado
         var successThreshold = d100Input * 0.5; // 50% do número dado
-        var goodThreshold = d100Input * 0.2; // 20% do número dado
 
-        var resultText = 'Resultado: ' + d100Roll;
+        var resultText = 'Resultado do d100: ' + d100Roll;
+
+        if (d100Roll <= 50 && d100Roll >= goodThreshold) {
+            resultText += ' - Bom!';
+        }
 
         if (d100Roll >= successThreshold) {
             resultText += ' - Sucesso!';
-        }
-
-        if (d100Roll <= goodThreshold) {
-            resultText += ' - Bom!';
         }
 
         d100ResultElement.textContent = resultText;
