@@ -1,4 +1,4 @@
-function rollDice(sides) {
+ï»¿function rollDice(sides) {
     var resultElement = document.getElementById('result');
     var rolledNumberElement = document.getElementById('rolledNumber');
 
@@ -13,30 +13,41 @@ function rollD100() {
     var d100ResultElement = document.getElementById('d100Result');
 
     if (isNaN(d100Input)) {
-        d100ResultElement.textContent = 'Digite um número válido.';
+        d100ResultElement.textContent = 'Digite um numero valido.';
     } else {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
-        var goodThreshold = d100Input * 0.26; // 26% do número dado
-        var successThreshold = d100Input * 0.5; // 50% do número dado
-        var extremoThreshold = d100Input * 0.75; // 75% do número dado
-        var pequenaFalhaThreshold = d100Input * 0.1; // 10% do número dado
+        var TriumphThreshold = d100Input = 1 // Quando o dado Ã© igual a 1
+        var minusExtremeThreshold = d100Input * 0.02; // 2% do nÃºmero obtido
+        var plusExtremeThreshold = d100Input * 0.25; // 25% do nÃºmero obtido
+        var minusGoodThreshold = d100Input * 0.26; // 26% do nÃºmero obtido
+        var plusGoodThreshold = d100Input * 0.5; // 50% do nÃºmero obtido
+        var minusNormalThreshold = d100Input * 0.51; // 51% do nÃºmero obtido
+        var plusNormalThreshold = d100Input * 1; // 100% do nÃºmero obtido
 
-        var resultText = 'Resultado do d100: ' + d100Roll;
+        var minusTinyFailure = d100Input * 1.01 // 101% do nÃºmero obtido
+        var plusTinyFailure = d100Input * 1.24 // 124% do nÃºmero obtido
 
-        if (d100Roll <= 50 && d100Roll >= pequenaFalhaThreshold) {
-            resultText += ' - Pequena Falha';
+        var resultText = 'Resultado: ' + d100Roll;
+
+
+        if (minusNormalThreshold <= d100Roll >= plusNormalThreshold) {
+            resultText += ' - Normal';
         }
 
-        if (d100Roll > 50 && d100Roll <= extremoThreshold) {
+        if (minusGoodThreshold <= d100Roll >= plusGoodThreshold) {
+            resultText += ' - Bom';
+        }
+
+        if (minusExtremeThreshold <= d100Roll <= plusExtremeThreshold) {
             resultText += ' - Extremo';
         }
 
-        if (d100Roll > 75) {
-            resultText += ' - Sucesso';
-        }
+        if (TriumphThreshold = d100Roll = TriumphThreshold) {
+            resultText += ' - Triunfo!!! ðŸ‘‘';
+        } 
 
-        if (d100Roll >= successThreshold) {
-            resultText += ' - Bom';
+        if (minusTinyFailure <= d100Roll >= plusTinyFailure) {
+            resultText += ' - Pequena Falha';
         }
 
         d100ResultElement.textContent = resultText;
