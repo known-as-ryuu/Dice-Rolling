@@ -18,15 +18,25 @@ function rollD100() {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
         var goodThreshold = d100Input * 0.26; // 26% do número dado
         var successThreshold = d100Input * 0.5; // 50% do número dado
+        var extremoThreshold = d100Input * 0.75; // 75% do número dado
+        var pequenaFalhaThreshold = d100Input * 0.1; // 10% do número dado
 
         var resultText = 'Resultado do d100: ' + d100Roll;
 
-        if (d100Roll <= 50 && d100Roll >= goodThreshold) {
-            resultText += ' - Bom!';
+        if (d100Roll <= 50 && d100Roll >= pequenaFalhaThreshold) {
+            resultText += ' - Pequena Falha';
+        }
+
+        if (d100Roll > 50 && d100Roll <= extremoThreshold) {
+            resultText += ' - Extremo';
+        }
+
+        if (d100Roll > 75) {
+            resultText += ' - Sucesso';
         }
 
         if (d100Roll >= successThreshold) {
-            resultText += ' - Sucesso!';
+            resultText += ' - Bom';
         }
 
         d100ResultElement.textContent = resultText;
