@@ -12,6 +12,10 @@ function rollD100() {
     var d100Input = parseInt(document.getElementById('d100Input').value);
     var d100ResultElement = document.getElementById('d100Result');
 
+    console.log(d100ResultElement); // Serve para verificar o elemento
+    console.log(d100ResultElement !== null); // Isso verificará se o elemento não é nulo
+
+
     if (isNaN(d100Input)) {
         d100ResultElement.textContent = 'Digite um numero valido.';
     } else {
@@ -34,7 +38,7 @@ function rollD100() {
 
         var resultText = 'Resultado: ' + d100Roll;
 
-
+        console.log(d100Roll)
         if (d100Roll === TriumphThreshold) {
             resultText += ' - Triunfo!!! 👑';
         } else if (d100Roll >= minusBigFailureThreshold) {
