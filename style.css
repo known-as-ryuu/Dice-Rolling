@@ -39,7 +39,7 @@ body {
     flex-direction: row; /* Organiza os grupos horizontalmente */
 }
 
-/* Ajuste o espaçamento entre as imagens e os botões */
+/* Ajuste o espaço entre as imagens e os botões */
 .dice-group {
     display: flex;
     flex-direction: column; /* Alinha os elementos verticalmente */
@@ -101,7 +101,7 @@ body {
     }
 
     /* Estilizando a barra de input */
-    .input[type="number"] {
+    input[type="number"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -109,15 +109,15 @@ body {
 }
 
     /* Skin da barra de input quando o mouse passa por cima */
-    .input[type="number"]:hover {
-        border-color: #3498db;
+    input[type="number"]:hover {
+        border-color: #007acc;
         box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
     }
 
     /* Skin da barra de input quando está focada */
-    .input[type="number"]:focus {
+    input[type="number"]:focus {
         outline: none;
-        border-color: #3498db;
+        border-color: #007acc;
         box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
     }
 /* Adicione essas regras no seu arquivo de estilo CSS */
@@ -126,5 +126,5 @@ body {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Define a altura da área visível da página */
+    height: 10vh; /* Define a altura da área visível da página */
 }
