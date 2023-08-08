@@ -5,6 +5,7 @@ body {
 
 .dice-container {
     display: flex;
+    flex-direction: row; /* Alinhar horizontalmente */
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
