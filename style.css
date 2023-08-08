@@ -3,6 +3,13 @@ body {
     background-color: #f0f0f0;
 }
 
+.resized-image {
+    width: 20%;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
 .dice-container {
     display: flex;
     flex-direction: row; /* Alinhar horizontalmente */
@@ -66,11 +73,6 @@ body {
         text-indent: -9999px;
     }
 
-.resized-image {
-    width: 20%;
-    display: block;
-    margin: 0 auto;
-    }
 
 
 .result {
