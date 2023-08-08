@@ -21,42 +21,42 @@ body {
     border-radius: 5px;
 }
 
-<img src="Data/d12.jpg" alt="d12">
+
 
 
 .dice.d4 {
     background-image: url('caminho-para-imagem-d4.png');
-    background-size: cover;
+    background-size: 20%;
     text-indent: -9999px;
 }
     .dice.d6 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
+        background-size: 10%;
         text-indent: -9999px;
     }
     .dice.d8 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
+        background-size: 15%;
         text-indent: -9999px;
     }
     .dice.d10 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
+        background-size: 25%;
         text-indent: -9999px;
     }
     .dice.d12 {
         background-image: url('Data/d12.png');
-        background-size: cover;
+        background-size: 30%;
         text-indent: -9999px;
 }
     .dice.d20 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
+        background-size: 5%;
         text-indent: -9999px;
     }
-    .dice.d1000 {
+    .dice.d100 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
+        background-size: 50%;
         text-indent: -9999px;
     }
 
