@@ -11,7 +11,7 @@ body {
 }
 
 .dice {
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 5px;
     font-size: 18px;
     cursor: pointer;
@@ -20,6 +20,44 @@ body {
     color: #fff;
     border-radius: 5px;
 }
+
+    .dice.d4 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d6 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d8 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d10 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d12 {
+        background-image: url('d12.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d20 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    .dice.d1000 {
+        background-image: url('caminho-para-imagem-d4.png');
+        background-size: cover;
+        text-indent: -9999px;
+    }
+
+
 
 .result {
     text-align: center;
