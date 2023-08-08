@@ -19,47 +19,40 @@ body {
     border: none;
     color: #fff;
     border-radius: 5px;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
 }
-
 
 
 
 .dice.d4 {
     background-image: url('caminho-para-imagem-d4.png');
-    background-size: 20%;
-    text-indent: -9999px;
 }
     .dice.d6 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: 10%;
-        text-indent: -9999px;
     }
     .dice.d8 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: 15%;
-        text-indent: -9999px;
     }
     .dice.d10 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: 25%;
-        text-indent: -9999px;
     }
     .dice.d12 {
         background-image: url('Data/d12.png');
-        background-size: 30%;
-        text-indent: -9999px;
 }
     .dice.d20 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: 5%;
-        text-indent: -9999px;
     }
     .dice.d100 {
         background-image: url('caminho-para-imagem-d4.png');
-        background-size: 50%;
-        text-indent: -9999px;
     }
 
+    .resized-image {
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+    }
 
 
 .result {
