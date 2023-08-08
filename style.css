@@ -95,6 +95,7 @@
     text-align: center;
     font-size: 24px;
     margin-top: 10px; /* Ajuste a margem conforme necessário */
+    display: block; /* Garante que o resultado seja exibido em uma nova linha */
 }
 
 
@@ -108,25 +109,26 @@
         display: none;
     }
 
-/* Estilizando a barra de input */
+    /* Skin da barra de input */
 input[type="number"] {
-    padding: 5px;
+    padding: 7px;
     border: 1px solid #ccc;
-    border-radius: 7px;
+    border-radius: 1000px;
     font-size: 15px;
+    margin: 5px
 }
 
     /* Skin da barra de input quando o mouse passa por cima */
     input[type="number"]:hover {
         border-color: #007acc;
-        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
     }
 
     /* Skin da barra de input quando esta focada */
     input[type="number"]:focus {
         outline: none;
         border-color: #007acc;
-        box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
     }
 
 .input-container {
@@ -137,16 +139,21 @@ input[type="number"] {
 }
 /* Skin do botao "Roll d100" */
 .roll-button {
-    padding: 10px 20px;
+    padding: 8px 10px;
     background-color: #007acc;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 1000px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background-color 0.3s ease-in-out;
+    margin: 5px;
 }
 
     .roll-button:hover {
         background-color: #0069b0;
     }
+
+button.roll-button:hover {
+    box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.5); /* Sombra quando o mouse passa por cima */
+}
