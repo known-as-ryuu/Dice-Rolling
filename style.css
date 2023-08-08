@@ -19,33 +19,40 @@ body {
     border: none;
     color: #fff;
     border-radius: 5px;
-    text-indent: -9999px;
     overflow: hidden;
     position: relative;
 }
 
 
 
-.dice.d4 {
-    background-image: url('caminho-para-imagem-d4.png');
-}
+    .dice.d4 {
+        background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
+    }
     .dice.d6 {
         background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
     }
     .dice.d8 {
         background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
     }
     .dice.d10 {
         background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
+
     }
     .dice.d12 {
         background-image: url('Data/d12.png');
-}
+        text-indent: -9999px;
+    }
     .dice.d20 {
         background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
     }
     .dice.d100 {
         background-image: url('caminho-para-imagem-d4.png');
+        text-indent: -9999px;
     }
 
     .resized-image {
