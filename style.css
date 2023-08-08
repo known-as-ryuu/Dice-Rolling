@@ -4,9 +4,8 @@ body {
 }
 
 .resized-image {
-    width: 10%;
-    max-width: 1080px; /* Tamanho máximo para as imagens */
-    max-height: 1080px;
+    width: 1080px; /* Tamanho máximo para as imagens */
+    height: 1080px;
     display: block;
     margin: 0 auto;
 }
