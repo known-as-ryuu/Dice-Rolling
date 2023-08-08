@@ -23,35 +23,37 @@ body {
     position: relative;
 }
 
-
+    .dice-group {
+        text-align: center;
+      margin-bottom: 20px;
+    }
 
     .dice.d4 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d4.png');
         text-indent: -9999px;
     }
     .dice.d6 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d6.png');
         text-indent: -9999px;
     }
     .dice.d8 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d8.png');
         text-indent: -9999px;
     }
     .dice.d10 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d10.png');
         text-indent: -9999px;
-
     }
     .dice.d12 {
         background-image: url('Data/d12.png');
         text-indent: -9999px;
     }
     .dice.d20 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d20.png');
         text-indent: -9999px;
     }
     .dice.d100 {
-        background-image: url('caminho-para-imagem-d4.png');
+        background-image: url('Data/d100.png');
         text-indent: -9999px;
     }
 
