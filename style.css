@@ -1,13 +1,13 @@
-body {
+Ôªøbody {
     font-family: Arial, sans-serif;
     background-color: #2d2d30;
 }
 
 .resized-image {
     max-width: 180px; /* Tamanho desejado para as imagens */
-    height: auto; /* MantÈm a proporÁ„o original das imagens */
+    height: auto; /* Mant√©m a propor√ß√£o original das imagens */
     display: block;
-    margin: 5px; /* EspaÁamento entre as imagens */
+    margin: 5px; /* Espa√ßamento entre as imagens */
 }
 
 .dice-container {
@@ -39,12 +39,12 @@ body {
     flex-direction: row; /* Organiza os grupos horizontalmente */
 }
 
-/* Ajuste o espaÁo entre as imagens e os botıes */
+/* Ajuste o espa√ßo entre as imagens e os bot√µes */
 .dice-group {
     display: flex;
     flex-direction: column; /* Alinha os elementos verticalmente */
     align-items: center; /* Centraliza os elementos horizontalmente */
-    margin-right: 20px; /* EspaÁamento entre os grupos */
+    margin-right: 20px; /* Espa√ßamento entre os grupos */
 }
 
 .dice.d4 {
@@ -83,14 +83,22 @@ body {
 }
 
 
-
+/* Resultado dos dados de cima */
 .result {
     text-align: center;
     font-size: 24px;
     margin-top: 20px;
 }
 
-/* PrÈ-carregar as imagens */
+/* Resultado da barra de status */
+.result-text {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px; /* Ajuste a margem conforme necess√°rio */
+}
+
+
+/* Pr√©-carregar as imagens */
 .dice-group .resized-image {
     background-image: none !important; /* Remove a imagem de fundo temporariamente */
 }
@@ -100,12 +108,12 @@ body {
         display: none;
     }
 
-    /* Estilizando a barra de input */
-    input[type="number"] {
-    padding: 10px;
+/* Estilizando a barra de input */
+input[type="number"] {
+    padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 7px;
+    font-size: 15px;
 }
 
     /* Skin da barra de input quando o mouse passa por cima */
@@ -114,17 +122,31 @@ body {
         box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
     }
 
-    /* Skin da barra de input quando est· focada */
+    /* Skin da barra de input quando esta focada */
     input[type="number"]:focus {
         outline: none;
         border-color: #007acc;
         box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
     }
-/* Adicione essas regras no seu arquivo de estilo CSS */
 
-    .input-container {
+.input-container {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    height: 10vh; /* Define a altura da ·rea visÌvel da p·gina */
+    height: 11vh; /* Define a altura da area visivel da pagina */
 }
+/* Skin do botao "Roll d100" */
+.roll-button {
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .roll-button:hover {
+        background-color: #0069b0;
+    }
