@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="dice-container">
-        <div class="dice-group">
-            <button class="dice" onclick="rollDice(4)">
-                <img src="Data/d4.png" alt="d4" class="resized-image">
-            </button>
-        </div>
-    </div>
+            <div class="dice-group">
+                <button class="dice" onclick="rollDice(4)">
+                    <img src="Data/d4.png" alt="d4" class="resized-image">
+                 </button>
+            </div>
+
             <div class="dice-group">
                 <button class="dice" onclick="rollDice(6)">
                     <img src="Data/d6.png" alt="d6" class="resized-image">
@@ -49,9 +49,10 @@
                 </button>
             </div>
     </div>
-    <div class="result" id="result">
-        <p id="rolledNumber"></p>
-    </div>
+
+   <div class="result" id="result">
+       <p id="rolledNumber"></p>
+   </div>
 
     <div class="d100-calculation-container">
         <label for="d100Input">Status aqui:</label>
