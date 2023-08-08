@@ -5,7 +5,6 @@ body {
 
 .resized-image {
     width: 20%;
-    height: 20px;
     display: block;
     margin: 0 auto;
 }
