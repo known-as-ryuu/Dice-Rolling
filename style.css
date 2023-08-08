@@ -4,18 +4,15 @@ body {
 }
 
 .resized-image {
-    width: 40%; /* Tamanho desejado para as imagens */
-    max-width: 250px; /* Tamanho máximo para as imagens */
+    width: 60px; /* Tamanho desejado para as imagens */
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
-    margin: 0 50px;
+    margin: 5px; /* Reduza a margem */
 }
 
 .dice-container {
     display: flex;
-    flex-direction: row; /* Alinhar horizontalmente */
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Centraliza os grupos horizontalmente */
     margin: 20px;
 }
 
@@ -41,7 +38,8 @@ body {
 
 .dice-group {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    margin-right: 20px; /* Adicione margem à direita para separar os grupos horizontalmente */
 }
 
     .dice.d4 {
@@ -86,8 +84,7 @@ body {
     background-image: none !important; /* Remove a imagem de fundo temporariamente */
 }
 
-    .dice-group .resized-image:after {
-        content: "";
-        background-image: url('Data/d4.png'); /* Substitua pelo caminho correto para cada imagem */
-        display: none;
-    }
+.dice-group .resized-image:after {
+    content: "";
+    display: none;
+}
