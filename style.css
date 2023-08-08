@@ -4,10 +4,10 @@ body {
 }
 
 .resized-image {
-    width: 20%;
+    width: 10%;
+    max-width: 108px; /* Defina o tamanho máximo desejado para as imagens */
     display: block;
     margin: 0 auto;
-    opacity: 0; /* Oculta as imagens inicialmente */
 }
 
 .dice-container {
