@@ -8,7 +8,7 @@ body {
     max-width: 250px; /* Tamanho máximo para as imagens */
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
-    margin: 0 auto;
+    margin: 0 50px;
 }
 
 .dice-container {
