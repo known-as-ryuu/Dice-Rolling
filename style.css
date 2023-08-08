@@ -4,10 +4,10 @@ body {
 }
 
 .resized-image {
-    width: 60px; /* Tamanho desejado para as imagens */
-    height: auto; /* MantÃ©m a proporÃ§Ã£o original das imagens */
+    max-width: 108px; /* Tamanho desejado para as imagens */
+    height: auto; /* Mantém a proporção original das imagens */
     display: block;
-    margin: 5px; /* Reduza a margem */
+    margin: 5px; /* Espaçamento entre as imagens */
 }
 
 .dice-container {
@@ -36,40 +36,48 @@ body {
     flex-direction: row; /* Organiza os grupos horizontalmente */
 }
 
+/* Ajuste o espaçamento entre as imagens e os botões */
 .dice-group {
-    text-align: center;
-    margin-bottom: 0;
-    margin-right: 20px; /* Adicione margem Ã  direita para separar os grupos horizontalmente */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    margin-right: 20px; /* Espaçamento entre os grupos */
 }
 
-    .dice.d4 {
-        background-image: url('Data/d4.png');
-        text-indent: -9999px;
-    }
-    .dice.d6 {
-        background-image: url('Data/d6.png');
-        text-indent: -9999px;
-    }
-    .dice.d8 {
-        background-image: url('Data/d8.png');
-        text-indent: -9999px;
-    }
-    .dice.d10 {
-        background-image: url('Data/d10.png');
-        text-indent: -9999px;
-    }
-    .dice.d12 {
-        background-image: url('Data/d12.png');
-        text-indent: -9999px;
-    }
-    .dice.d20 {
-        background-image: url('Data/d20.png');
-        text-indent: -9999px;
-    }
-    .dice.d100 {
-        background-image: url('Data/d100.png');
-        text-indent: -9999px;
-    }
+.dice.d4 {
+    background-image: url('Data/d4.png');
+    text-indent: -9999px;
+}
+
+.dice.d6 {
+    background-image: url('Data/d6.png');
+    text-indent: -9999px;
+}
+
+.dice.d8 {
+    background-image: url('Data/d8.png');
+    text-indent: -9999px;
+}
+
+.dice.d10 {
+    background-image: url('Data/d10.png');
+    text-indent: -9999px;
+}
+
+.dice.d12 {
+    background-image: url('Data/d12.png');
+    text-indent: -9999px;
+}
+
+.dice.d20 {
+    background-image: url('Data/d20.png');
+    text-indent: -9999px;
+}
+
+.dice.d100 {
+    background-image: url('Data/d100.png');
+    text-indent: -9999px;
+}
 
 
 
@@ -79,12 +87,12 @@ body {
     margin-top: 20px;
 }
 
-/* PrÃ©-carregar as imagens */
+/* Pré-carregar as imagens */
 .dice-group .resized-image {
     background-image: none !important; /* Remove a imagem de fundo temporariamente */
 }
 
-.dice-group .resized-image:after {
-    content: "";
-    display: none;
-}
+    .dice-group .resized-image:after {
+        content: "";
+        display: none;
+    }
