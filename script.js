@@ -39,7 +39,7 @@ function rollD100() {
             resultText += ' - Triunfo!!! 👑';
         } else if (d100Roll === DisasterThreshold) {
             resultText += ' - Desastre!!! ⚰️';
-        } else if (d100Roll >= minusBigFailureThreshold && d100Roll <= plusBigFailureThreshold) {
+        } else if (d100Roll >= minusBigFailureThreshold && d100Roll <= minusFailureThreshold) {
             resultText += ' - Grande Falha';
         } else if (d100Roll >= minusFailureThreshold && d100Roll <= plusFailureThreshold) {
             resultText += ' - Falha';
