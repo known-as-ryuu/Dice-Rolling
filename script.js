@@ -31,7 +31,7 @@ function rollD100() {
         var minusFailureThreshold = d100Input * 1.25;
         var plusFailureThreshold = d100Input * 1.49;
         var minusBigFailureThreshold = d100Input * 1.50;
-        var plusBigFailureThreshold = d100Input * 1.99;
+        var plusBigFailureThreshold = 99;;
 
         var resultText = 'Resultado: ' + d100Roll;
 
