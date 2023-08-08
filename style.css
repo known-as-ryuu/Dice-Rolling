@@ -23,9 +23,14 @@ body {
     position: relative;
 }
 
+.dice-groups {
+    display: flex;
+    flex-wrap: wrap; /* Se houver muitos grupos, eles se quebrarão em várias linhas */
+    justify-content: center; /* Para centralizar os grupos horizontalmente */
+
     .dice-group {
         text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10 20px;
     }
 
     .dice.d4 {
