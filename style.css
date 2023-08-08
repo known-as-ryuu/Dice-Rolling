@@ -5,9 +5,9 @@ body {
 
 .resized-image {
     max-width: 180px; /* Tamanho desejado para as imagens */
-    height: auto; /* Mantém a proporção original das imagens */
+    height: auto; /* Mant�m a propor��o original das imagens */
     display: block;
-    margin: 5px; /* Espaçamento entre as imagens */
+    margin: 5px; /* Espa�amento entre as imagens */
 }
 
 .dice-container {
@@ -28,7 +28,7 @@ body {
     position: relative;
 }
 
-    .dice:hover {
+.dice:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombreamento suave */
     }
 
@@ -39,12 +39,12 @@ body {
     flex-direction: row; /* Organiza os grupos horizontalmente */
 }
 
-/* Ajuste o espaçamento entre as imagens e os botões */
+/* Ajuste o espa�amento entre as imagens e os bot�es */
 .dice-group {
     display: flex;
     flex-direction: column; /* Alinha os elementos verticalmente */
     align-items: center; /* Centraliza os elementos horizontalmente */
-    margin-right: 20px; /* Espaçamento entre os grupos */
+    margin-right: 20px; /* Espa�amento entre os grupos */
 }
 
 .dice.d4 {
@@ -90,7 +90,7 @@ body {
     margin-top: 20px;
 }
 
-/* Pré-carregar as imagens */
+/* Pr�-carregar as imagens */
 .dice-group .resized-image {
     background-image: none !important; /* Remove a imagem de fundo temporariamente */
 }
