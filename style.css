@@ -21,11 +21,14 @@ body {
     border-radius: 5px;
 }
 
-    .dice.d4 {
-        background-image: url('caminho-para-imagem-d4.png');
-        background-size: cover;
-        text-indent: -9999px;
-    }
+<img src="Data/d12.jpg" alt="d12" >
+
+
+.dice.d4 {
+    background-image: url('caminho-para-imagem-d4.png');
+    background-size: cover;
+    text-indent: -9999px;
+}
     .dice.d6 {
         background-image: url('caminho-para-imagem-d4.png');
         background-size: cover;
