@@ -4,7 +4,7 @@ body {
 }
 
 .resized-image {
-    width: 20%; /* Tamanho desejado para as imagens */
+    width: 40%; /* Tamanho desejado para as imagens */
     max-width: 250px; /* Tamanho máximo para as imagens */
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
