@@ -99,3 +99,32 @@ body {
         content: "";
         display: none;
     }
+
+    /* Estilizando a barra de input */
+    .input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+    /* Skin da barra de input quando o mouse passa por cima */
+    .input[type="number"]:hover {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    }
+
+    /* Skin da barra de input quando está focada */
+    .input[type="number"]:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+    }
+/* Adicione essas regras no seu arquivo de estilo CSS */
+
+    .input-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura da área visível da página */
+}
