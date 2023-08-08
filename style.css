@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #2d2d30;
 }
 
 .resized-image {
@@ -13,20 +13,24 @@ body {
 .dice-container {
     display: flex;
     justify-content: center; /* Centraliza os grupos horizontalmente */
-    margin: 20px;
+    margin: 50px;
 }
 
 .dice {
-    padding: 10px 10px;
-    margin: 5px;
-    font-size: 18px;
+    padding: 5px 5px;
+    margin: auto;
     cursor: pointer;
     border: none;
     color: #fff;
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 180px;
     overflow: hidden;
     position: relative;
 }
+
+    .dice:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombreamento suave */
+    }
 
 .dice-groups {
     display: flex;
