@@ -24,16 +24,18 @@ body {
     position: relative;
 }
 
-    .dice-groups {
+.dice-groups {
     display: flex;
-    flex-wrap: wrap; /* Se houver muitos grupos, eles se quebrarão em várias linhas */
-    justify-content: center; /* Para centralizar os grupos horizontalmente */
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row; /* Organiza os grupos horizontalmente */
+}
 
-    .dice-group {
-        text-align: center;
-      margin-bottom: 0 20px;
-    }
+.dice-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+}
 
     .dice.d4 {
         background-image: url('Data/d4.png');
@@ -64,7 +66,7 @@ body {
         text-indent: -9999px;
     }
 
-    .resized-image {
+.resized-image {
     width: 20%;
     display: block;
     margin: 0 auto;
