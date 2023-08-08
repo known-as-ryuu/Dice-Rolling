@@ -5,9 +5,9 @@ body {
 
 .resized-image {
     max-width: 180px; /* Tamanho desejado para as imagens */
-    height: auto; /* MantÈm a proporÁ„o original das imagens */
+    height: auto; /* Mant√©m a propor√ß√£o original das imagens */
     display: block;
-    margin: 5px; /* EspaÁamento entre as imagens */
+    margin: 5px; /* Espa√ßamento entre as imagens */
 }
 
 .dice-container {
@@ -39,12 +39,12 @@ body {
     flex-direction: row; /* Organiza os grupos horizontalmente */
 }
 
-/* Ajuste o espaÁamento entre as imagens e os botıes */
+/* Ajuste o espa√ßamento entre as imagens e os bot√µes */
 .dice-group {
     display: flex;
     flex-direction: column; /* Alinha os elementos verticalmente */
     align-items: center; /* Centraliza os elementos horizontalmente */
-    margin-right: 20px; /* EspaÁamento entre os grupos */
+    margin-right: 20px; /* Espa√ßamento entre os grupos */
 }
 
 .dice.d4 {
@@ -90,7 +90,7 @@ body {
     margin-top: 20px;
 }
 
-/* PrÈ-carregar as imagens */
+/* Pr√©-carregar as imagens */
 .dice-group .resized-image {
     background-image: none !important; /* Remove a imagem de fundo temporariamente */
 }
