@@ -84,34 +84,41 @@
     text-indent: -9999px;
 }
 
-/* Botao para apagar resultados */
+/* Skin do botao de clear */
 .clear-button {
-    display: none;
+    display: none; /* Oculta o botão inicialmente */
     background-color: transparent;
     border: none;
     color: #6e6e6e;
     font-weight: bold;
     cursor: pointer;
     border-radius: 1000px;
+    margin-left: 5px;
+    font-size: 15px;
+    vertical-align: middle;
 }
-}
+
     .clear-button:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombreamento suave */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
 /* Resultado dos dados de cima */
 .result {
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 20px;
 }
 
 /* Resultado da barra de status */
 .result-text {
     text-align: center;
-    font-size: 24px;
-    margin-top: 10px;
-    display: block; /* Garante que o resultado seja exibido em uma nova linha */
+    font-size: 20px;
+    margin-top: 5px;
+    display: inline; /* Mantenha o comportamento inline do resultado */
+}
+
+.result p {
+    display: inline-block;
 }
 
 
