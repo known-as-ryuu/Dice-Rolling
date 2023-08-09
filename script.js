@@ -69,3 +69,6 @@ function rollD100() {
         d100ResultElement.textContent = resultText;
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("loaded");
+});
