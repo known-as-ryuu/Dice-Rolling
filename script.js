@@ -13,6 +13,9 @@ function rollD100() {
     var d100ResultElement = document.getElementById('d100Result');
     console.log(d100ResultElement !== null);
 
+    console.log('d100Input:', d100Input);
+    console.log('d100Roll:', d100Roll);
+
     if (isNaN(d100Input)) {
         d100ResultElement.textContent = 'Digite um numero valido.';
     } else {
@@ -22,14 +25,14 @@ function rollD100() {
         var DisasterThreshold = 100;
         var minusExtremeThreshold = d100Input * 0.02;
         var plusExtremeThreshold = d100Input * 0.25;
-        var minusGoodThreshold = d100Input * 0.26;
+        var minusGoodThreshold = d100Input * 0.251;
         var plusGoodThreshold = d100Input * 0.5;
-        var minusNormalThreshold = d100Input * 0.51;
+        var minusNormalThreshold = d100Input * 0.501;
         var plusNormalThreshold = d100Input * 1;
         var minusTinyFailureThreshold = d100Input * 1.01;
-        var plusTinyFailureThreshold = d100Input * 1.24;
+        var plusTinyFailureThreshold = d100Input * 1.249;
         var minusFailureThreshold = d100Input * 1.25;
-        var plusFailureThreshold = d100Input * 1.49;
+        var plusFailureThreshold = d100Input * 1.499;
         var minusBigFailureThreshold = d100Input * 1.50;
         var plusBigFailureThreshold = 99;;
 
