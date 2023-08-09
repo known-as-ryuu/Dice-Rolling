@@ -12,6 +12,7 @@
 function clearResults() {
     var resultElement = document.getElementById('result');
     var rolledNumberElement = document.getElementById('rolledNumber');
+    var clearButton = document.getElementById('clearResultButton');
 
     resultElement.style.display = 'none';
     rolledNumberElement.textContent = '';
