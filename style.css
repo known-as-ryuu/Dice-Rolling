@@ -50,7 +50,7 @@
 }
 
 .dice.d4 {
-    background-image: url('Data/d4.png');
+    background-image: url('Data/d4.png'); /* Imagem individual de cada dado */
     text-indent: -9999px;
 }
 

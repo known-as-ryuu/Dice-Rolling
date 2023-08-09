@@ -3,7 +3,7 @@
     var rolledNumberElement = document.getElementById('rolledNumber');
 
     var result = Math.floor(Math.random() * sides) + 1;
-    rolledNumberElement.textContent = 'Resultado: ' + result + ' (d'+ sides +')';
+    rolledNumberElement.textContent = 'Resultado: ' + result + ' (d'+ sides +')'; // Resultado: 5 (d10)
 
     resultElement.style.display = 'block';
 }
