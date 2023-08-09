@@ -1,11 +1,21 @@
 ﻿function rollDice(sides) {
     var resultElement = document.getElementById('result');
     var rolledNumberElement = document.getElementById('rolledNumber');
+    var clearButton = document.getElementById('clearResultButton'); // Pega a referencia do botão de limpar
 
     var result = Math.floor(Math.random() * sides) + 1;
     rolledNumberElement.textContent = 'Resultado: ' + result + ' (d'+ sides +')'; // Resultado: 5 (d10)
 
     resultElement.style.display = 'block';
+    clearButton.style.display = 'inline-block'; // Exibe o botão de limpar
+}
+function clearResults() {
+    var resultElement = document.getElementById('result');
+    var rolledNumberElement = document.getElementById('rolledNumber');
+
+    resultElement.style.display = 'none';
+    rolledNumberElement.textContent = '';
+    clearButton.style.display = 'none'; // Oculta o botao de limpar outra vez
 }
 
 function rollD100() {
@@ -57,11 +67,4 @@ function rollD100() {
 
         d100ResultElement.textContent = resultText;
     }
-}
-function clearResults() {
-    var resultElement = document.getElementById('result');
-    var rolledNumberElement = document.getElementById('rolledNumber');
-
-    resultElement.style.display = 'none';
-    rolledNumberElement.textContent = '';
 }
