@@ -84,35 +84,42 @@
     text-indent: -9999px;
 }
 
-/* Botao para apagar resultados */
-.clear-button {
-    display: none;
-    background-color: transparent;
-    border: none;
-    color: #6e6e6e;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 1000px;
-}
-}
-    .clear-button:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombreamento suave */
-    }
-
 /* Resultado dos dados de cima */
 .result {
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 20px;
 }
 
 /* Resultado da barra de status */
 .result-text {
     text-align: center;
-    font-size: 24px;
-    margin-top: 10px;
-    display: block; /* Garante que o resultado seja exibido em uma nova linha */
+    font-size: 20px;
+    margin-top: 5px;
+    display: block; /* Resultado aparece em uma nova linha */
 }
+
+.result p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Skin do botao de clear */
+.clear-button {
+    background-color: transparent;
+    border: none;
+    color: #6e6e6e;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1000px;
+    margin-left: 5px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+    .clear-button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
 
 
 /* Pré-carregar as imagens */
