@@ -16,6 +16,15 @@
         label {
             color:white;
         }
+        footer{
+            color:lightgray;
+        }
+
+        /* Rounded border */
+        hr.rounded {
+            border-top: 3px solid #bbb;
+            border-radius: 2px;
+        }
 
     </style>
     <script src="script.js"></script>
@@ -71,6 +80,9 @@
             <p id="rolledNumber"></p>
         </div>
 
+       
+        <hr class="rounded">
+
         <div class="d100-calculation-container input-container">
             <label class="insert-stats" for="d100Input">Status aqui:</label>
             <input type="number" id="d100Input" placeholder="(Status)">
@@ -78,8 +90,14 @@
             <p id="d100Result" class="result-text"></p>
         </div>
 
-        <h2><br>
-        <i><b>A calculadora calcula os seguintes cálculos para o resultado ser calculado:</b></i><br></h2>
+        <br>
+        <br>
+        
+        <hr class="rounded">
+        
+        <h2>
+            <i><b>A calculadora calcula os seguintes cálculos para o resultado ser calculado:</b></i><br>
+        </h2>
         <p>
             <i>O personagem tem 40 de força</i><br>
             <br>
@@ -98,9 +116,11 @@
             <br>
             <br>
     </center>
-                Made by: <br>
-                @known.as.ryuu on Discord <br>
-                @KnownAsRyuu on Twitter
 
+        <footer>
+            Made by: <br>
+            @known.as.ryuu on Discord <br>
+            @KnownAsRyuu on Twitter
+        </footer>
 </body>
     </html>
