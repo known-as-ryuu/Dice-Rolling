@@ -26,10 +26,12 @@
     border-radius: 180px;
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease; /* Transiçao suave ao zoom */
 }
 
     .dice:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombreamento suave */
+        transform: scale(1.2); /* Nivel de zoom */
     }
 
 .dice-groups {
@@ -109,7 +111,7 @@
         display: none;
     }
 
-    /* Skin da barra de input */
+/* Skin da barra de input */
 input[type="number"] {
     padding: 7px;
     border: 1px solid #ccc;
@@ -138,7 +140,7 @@ input[type="number"] {
     flex-direction: column;
     align-items: center;
     height: 11vh; /* Define a altura da area visivel da pagina */
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 
@@ -171,5 +173,4 @@ button.roll-button:hover {
 /* Skin do "Status aqui:" */
 .insert-stats {
     font-size: 24px;
-    margin-bottom: 80px;
 }
