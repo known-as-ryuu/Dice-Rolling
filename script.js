@@ -14,7 +14,6 @@ function rollD100() {
     console.log(d100ResultElement !== null);
 
     console.log('d100Input:', d100Input);
-    console.log('d100Roll:', d100Roll);
 
     if (isNaN(d100Input)) {
         d100ResultElement.textContent = 'Digite um numero valido.';
@@ -58,4 +57,11 @@ function rollD100() {
 
         d100ResultElement.textContent = resultText;
     }
+}
+function clearResults() {
+    var resultElement = document.getElementById('result');
+    var rolledNumberElement = document.getElementById('rolledNumber');
+
+    resultElement.style.display = 'none';
+    rolledNumberElement.textContent = '';
 }
