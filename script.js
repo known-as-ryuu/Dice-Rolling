@@ -3,7 +3,7 @@
     var rolledNumberElement = document.getElementById('rolledNumber');
 
     var result = Math.floor(Math.random() * sides) + 1;
-    rolledNumberElement.textContent = 'Resultado: ' + result + ' (' + sides + ' faces)';
+    rolledNumberElement.textContent = 'Resultado: ' + result + ' (d'+ sides +')';
 
     resultElement.style.display = 'block';
 }
