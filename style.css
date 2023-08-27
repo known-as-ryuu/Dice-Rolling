@@ -15,27 +15,6 @@
 }
 
 
-/* Dispositivos com tela menor que 600px */
-@media (max-width: 900px) {
-    /* Estilos desejados aqui */
-    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
-        max-width: 15%;
-    }
-    body {
-        font-size: 16px; /* Reduza o tamanho da fonte, se necessário */
-    }
-}
-
-/* Dispositivos com tela menor que 400px */
-@media (max-width: 400px) {
-    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
-        max-width: 15%; /* Reduza o tamanho das imagens */
-    }
-    body {
-        font-size: 10px;
-    }
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #2d2d30;
@@ -55,10 +34,11 @@ body {
 }
 
 .dice-container {
-    display: flex;
-    justify-content: center; /* Centraliza os grupos horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cria colunas flexíveis */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    gap: 10px; /* Espaçamento entre os itens */
     margin: 50px;
-    flex-wrap: wrap; /* Permite que os grupos se empilhem */
     
 }
 
