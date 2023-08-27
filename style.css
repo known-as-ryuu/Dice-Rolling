@@ -6,7 +6,12 @@
     }
 
     .dice-container {
-        margin: 20px; /* Reduza o espaçamento entre os grupos */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Define 2 colunas */
+        grid-template-rows: repeat(4, auto); /* Define 4 linhas */
+        gap: 10px; /* Espaçamento entre os itens */
+        justify-items: center; /* Centraliza os itens horizontalmente */
+        margin: 20px;
     }
 
     body {
