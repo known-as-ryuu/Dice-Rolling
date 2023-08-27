@@ -14,12 +14,15 @@
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
     margin: 5px; /* Espaçamento entre as imagens */
+    max-width: 100% /* Limita as imagens à largura da tela */
 }
 
 .dice-container {
     display: flex;
     justify-content: center; /* Centraliza os grupos horizontalmente */
     margin: 50px;
+    flex-wrap: wrap; /* Permite que os grupos se empilhem */
+    
 }
 
 .dice {
@@ -40,19 +43,15 @@
         transform: scale(1.2); /* Nivel de zoom */
     }
 
-.dice-groups {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza grupos */
-    flex-direction: row; /* Organiza os grupos horizontalmente */
-}
 
 /* Ajuste o espaço entre as imagens e os botões */
 .dice-group {
     display: flex;
     flex-direction: column; /* Alinha os elementos verticalmente */
     align-items: center; /* Centraliza os elementos horizontalmente */
-    margin-right: 20px; /* Espaçamento entre os grupos */
+    flex: 1; /* Distribui o espaço igualmente entre os grupos */
+    margin: 10px; /* Espaçamento entre os grupos */
+
 }
 
 .dice.d4 {
@@ -200,4 +199,20 @@ button.roll-button:hover {
 /* Skin do "Status aqui:" */
 .insert-stats {
     font-size: 24px;
+}
+
+/* Dispositivos com tela menor que 600px */
+@media (max-width: 600px) {
+    /* Aplique os estilos desejados aqui */
+    body {
+        font-size: 14px; /* Reduza o tamanho da fonte, se necessário */
+    }
+}
+
+/* Dispositivos com tela menor que 400px */
+@media (max-width: 400px) {
+    /* Aplique estilos específicos para telas muito pequenas */
+    body {
+        font-size: 10px;
+    }
 }
