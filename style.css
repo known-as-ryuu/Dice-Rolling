@@ -48,11 +48,10 @@ body {
     }
 
 .resized-image {
-    max-width: 180px; /* Tamanho desejado para as imagens */
+    max-width: 100%; /* Limita as imagens à largura da tela */
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
     margin: 5px; /* Espaçamento entre as imagens */
-    max-width: 100% /* Limita as imagens à largura da tela */
 }
 
 .dice-container {
