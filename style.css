@@ -1,35 +1,32 @@
 ﻿/* Estilos para mobile */
 @media (max-width: 1080px) {
+    /* Adicione os estilos desejados aqui */
     .dice-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Define 2 colunas */
-        gap: 10px; /* Espaçamento entre os itens */
-        justify-items: center; /* Centraliza os itens horizontalmente */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         margin: 20px;
     }
 
     .dice-group {
         display: flex;
-        flex-direction: column; /* Alinha os elementos verticalmente */
-        align-items: center; /* Centraliza os elementos horizontalmente */
-        margin: 10px; /* Espaçamento entre os grupos */
-        flex: 1; /* Distribui o espaço igualmente entre os grupos */
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        flex: 1;
+        max-width: calc(50% - 20px); /* 50% de largura menos o espaçamento */
     }
 
-    .dice.d4, .dice.d6, .dice.d8 {
-        max-width: 100px; /* Reduza o tamanho das imagens */
-    }
-
-    .dice.d10, .dice.d12, .dice.d20 {
-        max-width: 100px; /* Reduza o tamanho das imagens */
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20 {
+        max-width: 100px;
     }
 
     .dice.d100 {
-        max-width: 150px; /* Reduza o tamanho da imagem do d100 */
+        max-width: 150px;
     }
 
     body {
-        font-size: 20px; /* Ajuste o tamanho da fonte, se necessário */
+        font-size: 20px;
     }
 }
 
