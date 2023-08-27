@@ -1,4 +1,42 @@
-﻿body {
+﻿/* Estilos para mobile */
+@media (max-width: 1080px) {
+    /* Adicione os estilos desejados aqui */
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
+        max-width: 15%; /* Reduza o tamanho das imagens */
+    }
+
+    .dice-container {
+        margin: 20px; /* Reduza o espaçamento entre os grupos */
+    }
+
+    body {
+        font-size: 20px; /* Ajuste o tamanho da fonte, se necessário */
+    }
+}
+
+
+/* Dispositivos com tela menor que 600px */
+@media (max-width: 900px) {
+    /* Estilos desejados aqui */
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
+        max-width: 15%;
+    }
+    body {
+        font-size: 16px; /* Reduza o tamanho da fonte, se necessário */
+    }
+}
+
+/* Dispositivos com tela menor que 400px */
+@media (max-width: 400px) {
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
+        max-width: 15%; /* Reduza o tamanho das imagens */
+    }
+    body {
+        font-size: 10px;
+    }
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #2d2d30;
     opacity: 0; /* Inicialmente, o corpo da página é transparente */
@@ -199,20 +237,4 @@ button.roll-button:hover {
 /* Skin do "Status aqui:" */
 .insert-stats {
     font-size: 24px;
-}
-
-/* Dispositivos com tela menor que 600px */
-@media (max-width: 600px) {
-    /* Aplique os estilos desejados aqui */
-    body {
-        font-size: 14px; /* Reduza o tamanho da fonte, se necessário */
-    }
-}
-
-/* Dispositivos com tela menor que 400px */
-@media (max-width: 400px) {
-    /* Aplique estilos específicos para telas muito pequenas */
-    body {
-        font-size: 10px;
-    }
 }
