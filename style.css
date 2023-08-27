@@ -1,5 +1,5 @@
 ﻿/* Estilos para mobile */
-@media (max-width: 1080px) {
+@media (max-width: 600px) {
     /* Adicione os estilos desejados aqui */
     .dice-container {
         display: grid;
@@ -18,12 +18,8 @@
         flex: 1;
     }
 
-    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20 {
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
         max-width: 100px;
-    }
-
-    .dice.d100 {
-        max-width: 150px;
     }
 
     body {
