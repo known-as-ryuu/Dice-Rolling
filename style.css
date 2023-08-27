@@ -3,7 +3,6 @@
     /* Adicione os estilos desejados aqui */
     .dice-container {
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
         justify-content: center;
@@ -11,8 +10,7 @@
     }
 
     .dice-group.middle {
-        grid-row: 2 / span 1;
-        grid-column: 1 / span 2;
+        grid-column: span 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -20,8 +18,12 @@
         flex: 1;
     }
 
-    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
+    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20 {
         max-width: 100px;
+    }
+
+    .dice.d100 {
+        max-width: 150px;
     }
 
     body {
