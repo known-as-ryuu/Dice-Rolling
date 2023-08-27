@@ -2,7 +2,7 @@
 @media (max-width: 1080px) {
     /* Adicione os estilos desejados aqui */
     .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
-        max-width: 15%; /* Reduza o tamanho das imagens */
+        max-width: 100px; /* Reduza o tamanho das imagens */
     }
 
     .dice-container {
