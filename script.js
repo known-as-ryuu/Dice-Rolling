@@ -74,7 +74,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// iguala os valores ods elementos no html às constantes criadas
+function clearTable() {
+  const ForçaElement = document.getElementById("Força")
+  const MagiaElement = document.getElementById("Magia");
+  const EsquivaElement = document.getElementById("Esquiva");
+  const ResistenciaElement = document.getElementById("Resistência");
+  const DestrezaElement = document.getElementById("Destreza");
+  const ProcurarElement = document.getElementById("Procurar");
+  const EscutarElement = document.getElementById("Escutar");
+  const FurtividadeElement = document.getElementById("Furtividade");
+  const MedicinaElement = document.getElementById("Medicina");
+  const LabiaElement = document.getElementById("Lábia");
+  const ModoElement = document.getElementById("Modo");
+
+
+  ForçaElement.value = ''; // Limpa o conteúdo da caixa de texto
+  MagiaElement.value = '';
+  EsquivaElement.value = '';
+  ResistenciaElement.value = '';
+  DestrezaElement.value = '';
+  ProcurarElement.value = '';
+  EscutarElement.value = '';
+  FurtividadeElement.value = '';
+  MedicinaElement.value = '';
+  LabiaElement.value = '';
+  ModoElement.value = '';
+
+  localStorage.removeItem('valorForça'); // Remove os dados armazenados
+  localStorage.removeItem('valorMagia');
+  localStorage.removeItem('valorEsquiva');
+  localStorage.removeItem('valorResistencia');
+  localStorage.removeItem('valorDestreza');
+  localStorage.removeItem('valorProcurar');
+  localStorage.removeItem('valorEscutar');
+  localStorage.removeItem('valorFurtividade');
+  localStorage.removeItem('valorMedicina');
+  localStorage.removeItem('valorLabia');
+  localStorage.removeItem('valorModo');
+}
+
+
+// iguala os valores dos elementos no html às constantes criadas<
 const ForçaElement = document.getElementById("Força");
 const MagiaElement = document.getElementById("Magia");
 const EsquivaElement = document.getElementById("Esquiva");
@@ -131,6 +171,7 @@ if (localStorage.getItem("valorModo")) {
     ModoElement.value = localStorage.getItem("valorModo");
   }
 
+
 // adiciona um evento para salvar os valores no localStorage quando forem inseridos dados
 ForçaElement.addEventListener("input", () => {
     localStorage.setItem("valorForça", ForçaElement.value);
@@ -175,4 +216,5 @@ LabiaElement.addEventListener("input", () => {
 ModoElement.addEventListener("input", () => {
   localStorage.setItem("valorModo", ModoElement.value);
 });
+
 

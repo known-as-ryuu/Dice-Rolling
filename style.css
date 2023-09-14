@@ -36,7 +36,6 @@ body {
     max-width: 100%; /* Limita as imagens à largura da tela */
     height: auto; /* Mantém a proporção original das imagens */
     display: block;
-    margin: 5px; /* Espaçamento entre as imagens */
 }
 
 
@@ -269,3 +268,23 @@ input[class="d100Table"] {
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
     }
 
+
+.clearTable {
+    padding: 4px 8px;
+    margin: 4px;
+    background-color: #4d4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out;
+    margin: 3px;
+  }
+    .clearTable:hover {
+    background-color: #3b3b3b;
+    }
+  
+button.clearTable:hover {
+    box-shadow: 0px 0px 15px rgba(192, 194, 196, 0.5); /* Sombra quando o mouse passa por cima */
+}
