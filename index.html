@@ -31,11 +31,26 @@
             border-top: 3px solid #3e3e42;
             border-radius: 2px;
         }
+
+        table {
+            color:white;
+            width: 16%;
+            font-size: 18px;
+
+        }
+        
+        th, td {
+            border: 1px solid;
+            color: white;
+        }
+
+
     </style>
     <script src="script.js"></script>
 </head>
 <body>
     <center>
+        <!-- Dados Botões -->
         <div class="dice-container">
 
             <div class="dice-group">
@@ -81,15 +96,108 @@
             </div>
         </div>
 
+        <!-- Resultados Botões -->
         <div class="result" id="result">
             <p id="rolledNumber"></p>
                 <button class="clear-button" id="clearResultButton" onclick="clearResults()">X</button>
             
         </div>
 
-       
+         <!-- Divisória -->
         <hr class="rounded">
 
+        <br>
+
+        <!-- Tabela de Status -->
+        <table style="text-align: center;">
+            <tr>
+                <th></th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td><img src="Data/força.png" width="18"> Força</td>
+                <td>
+                    <input type="number" class="d100Table" id="Força">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Data/magia.png" width="18"> Magia</td>
+                    <td>
+                        <input type="number" class="d100Table" id="Magia">
+                        <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    </td>
+            </tr>
+            <tr>
+                <td><img src="Data/esquiva.png" width="18px"> Esquiva</td>
+                <td>
+                    <input type="number" class="d100Table" id="Esquiva">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/resistencia.png" width="18px"> Resistência</td>
+                <td>
+                    <input type="number" class="d100Table" id="Resistência">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/destreza.png" width="18px"> Destreza</td>
+                <td>
+                    <input type="number" class="d100Table" id="Destreza">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/procurar.png" width="18px"> Procurar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Procurar">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/escutar.png" width="18px"> Escutar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Escutar">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/furtividade.png" width="18px"> Furtividade</td>
+                <td>
+                    <input type="number" class="d100Table" id="Furtividade">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/medicina.png" width="18px"> Medicina</td>
+                <td>
+                    <input type="number" class="d100Table" id="Medicina">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/labia2.png" width="18px"> Lábia</td>
+                <td>
+                    <input type="number" class="d100Table" id="Lábia">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/modo.png" width="18px"> Modo</td>
+                <td>
+                    <input type="number" class="d100Table" id="Modo">
+                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                </td>
+            </tr>
+          </table>
+
+    
+
+        <!-- D100 de status -->
         <div class="d100-calculation-container input-container">
             <label class="insert-stats" for="d100Input">Status aqui:</label>
             <input type="number" id="d100Input" placeholder="Ex: 70 (de Magia)">
@@ -98,10 +206,12 @@
         </div>
 
         <br>
-        <br>
-        
+    
+
+        <!-- Divisória -->
         <hr class="rounded">
         
+        <!-- Texto -->
         <h2>
             <i><b>A calculadora calcula os seguintes cálculos para o resultado ser calculado:</b></i><br>
         </h2>
@@ -131,4 +241,4 @@
             @known-as-ryuu on Github
         </footer>
 </body>
-    </html>
+</html>

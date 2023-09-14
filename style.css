@@ -1,16 +1,8 @@
 ﻿/* Estilos para dispositivos móveis */
 @media (max-width: 1080px) {
-    /* Adicione os estilos desejados aqui */
-    .dice-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin: 20px;
-        align-items: center;
-        justify-content: center;
-    }
 
-    .dice-group.middle {
+    /* Adicione os estilos desejados aqui */
+    .dice-container.middle {
         grid-column: span 2;
         display: flex;
         flex-direction: column;
@@ -19,9 +11,9 @@
         flex: 1;
     }
 
-    .dice.d4, .dice.d6, .dice.d8, .dice.d10, .dice.d12, .dice.d20, .dice.d100 {
-        max-width: 12vw;
-    }
+    /*  max-width: 12vh; */
+
+
 
     body {
         font-size: 20px;
@@ -46,6 +38,7 @@ body {
     display: block;
     margin: 5px; /* Espaçamento entre as imagens */
 }
+
 
 .dice-container {
     display: grid;
@@ -169,7 +162,7 @@ body {
     }
 
 /* Skin da barra de input */
-input[type="number"] {
+input[id="d100Input"] {
     padding: 7px;
     border: 1px solid #ccc;
     border-radius: 1000px;
@@ -231,3 +224,48 @@ button.roll-button:hover {
 .insert-stats {
     font-size: 24px;
 }
+
+
+/* Botão d100 da tabela */
+.roll-table {
+    padding: 4px 8px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out;
+    margin: 3px;
+}
+    .roll-table:hover {
+    background-color: #0069b0;
+    }
+
+    button.roll-table:hover {
+    box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.5); /* Sombra quando o mouse passa por cima */
+    }
+
+/* Skin da barra de input */
+input[class="d100Table"] {
+    padding: 0px 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    margin: 4px;
+    width: 5vh;
+}
+
+    /* Skin da barra de input quando o mouse passa por cima */
+    input[class="d100Table"]:hover {
+        border-color: #007acc;
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+    }
+
+    /* Skin da barra de input quando esta focada */
+    input[class="d100Table"]:focus {
+        outline: none;
+        border-color: #007acc;
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
+    }
+

@@ -27,7 +27,7 @@ function rollD100() {
     console.log('d100Input:', d100Input);
 
     if (isNaN(d100Input)) {
-        d100ResultElement.textContent = 'Digite um numero valido.';
+        d100ResultElement.textContent = 'Digite um número válido.';
     } else {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
         console.log(d100Roll);
@@ -72,3 +72,107 @@ function rollD100() {
 document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("loaded");
 });
+
+
+// iguala os valores ods elementos no html às constantes criadas
+const ForçaElement = document.getElementById("Força");
+const MagiaElement = document.getElementById("Magia");
+const EsquivaElement = document.getElementById("Esquiva");
+const ResistenciaElement = document.getElementById("Resistência");
+const DestrezaElement = document.getElementById("Destreza");
+const ProcurarElement = document.getElementById("Procurar");
+const EscutarElement = document.getElementById("Escutar");
+const FurtividadeElement = document.getElementById("Furtividade");
+const MedicinaElement = document.getElementById("Medicina");
+const LabiaElement = document.getElementById("Lábia");
+const ModoElement = document.getElementById("Modo");
+
+// verifica se existem valores no localStorage e, se houver, preenche os campos de input
+if (localStorage.getItem("valorForça")) {
+    ForçaElement.value = localStorage.getItem("valorForça");
+  }
+if (localStorage.getItem("valorMagia")) {
+    MagiaElement.value = localStorage.getItem("valorMagia");
+  }
+
+if (localStorage.getItem("valorEsquiva")) {
+    EsquivaElement.value = localStorage.getItem("valorEsquiva");
+  }
+
+if (localStorage.getItem("valorResistencia")) {
+    ResistenciaElement.value = localStorage.getItem("valorResistencia");
+  }
+
+if (localStorage.getItem("valorDestreza")) {
+    DestrezaElement.value = localStorage.getItem("valorDestreza");
+  }
+
+if (localStorage.getItem("valorProcurar")) {
+    ProcurarElement.value = localStorage.getItem("valorProcurar");
+  }
+
+if (localStorage.getItem("valorEscutar")) {
+    EscutarElement.value = localStorage.getItem("valorEscutar");
+  }
+
+if (localStorage.getItem("valorFurtividade")) {
+    FurtividadeElement.value = localStorage.getItem("valorFurtividade");
+  }
+
+if (localStorage.getItem("valorMedicina")) {
+    MedicinaElement.value = localStorage.getItem("valorMedicina");
+  }
+
+if (localStorage.getItem("valorLabia")) {
+    LabiaElement.value = localStorage.getItem("valorLabia");
+  }
+
+if (localStorage.getItem("valorModo")) {
+    ModoElement.value = localStorage.getItem("valorModo");
+  }
+
+// adiciona um evento para salvar os valores no localStorage quando forem inseridos dados
+ForçaElement.addEventListener("input", () => {
+    localStorage.setItem("valorForça", ForçaElement.value);
+  });
+
+MagiaElement.addEventListener("input", () => {
+    localStorage.setItem("valorMagia", MagiaElement.value);
+  });
+
+EsquivaElement.addEventListener("input", () => {
+    localStorage.setItem("valorEsquiva", EsquivaElement.value);
+  });
+
+ResistenciaElement.addEventListener("input", () => {
+    localStorage.setItem("valorResistencia", ResistenciaElement.value);
+  });
+
+DestrezaElement.addEventListener("input", () =>{
+  localStorage.setItem("valorDestreza", DestrezaElement.value);
+});
+
+ProcurarElement.addEventListener("input", () => {
+  localStorage.setItem("valorProcurar", ProcurarElement.value);
+});
+
+EscutarElement.addEventListener("input", () => {
+  localStorage.setItem("valorEscutar", EsquivaElement.value);
+});
+
+FurtividadeElement.addEventListener("input", () => {
+  localStorage.setItem("valorFurtividade", FurtividadeElement.value);
+});
+
+MedicinaElement.addEventListener("input", () => {
+  localStorage.setItem("valorMedicina", MedicinaElement.value);
+});
+
+LabiaElement.addEventListener("input", () => {
+  localStorage.setItem("valorLabia", LabiaElement.value);
+});
+
+ModoElement.addEventListener("input", () => {
+  localStorage.setItem("valorModo", ModoElement.value);
+});
+
