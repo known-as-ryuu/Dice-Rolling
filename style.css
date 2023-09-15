@@ -245,7 +245,7 @@ button.roll-button:hover {
     box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.5); /* Sombra quando o mouse passa por cima */
     }
 
-/* Skin da barra de input */
+/* Skin da barra de input, para a tabela é outra coisa */
 input[class="d100Table"] {
     padding: 0px 5px;
     border: 1px solid #ccc;
@@ -269,6 +269,7 @@ input[class="d100Table"] {
     }
 
 
+
 .clearTable {
     padding: 4px 8px;
     margin: 4px;
@@ -279,7 +280,9 @@ input[class="d100Table"] {
     cursor: pointer;
     font-size: 15px;
     transition: background-color 0.3s ease-in-out;
-    margin: 3px;
+    margin-right: 105px;
+    margin-left: 110px;
+     
   }
     .clearTable:hover {
     background-color: #3b3b3b;
@@ -288,3 +291,20 @@ input[class="d100Table"] {
 button.clearTable:hover {
     box-shadow: 0px 0px 15px rgba(192, 194, 196, 0.5); /* Sombra quando o mouse passa por cima */
 }
+
+
+.tabelas {
+    display: flex;
+    justify-content: center; /* centraliza */
+}
+
+.d100Table2 {
+    margin-bottom: initial;
+    margin-top: 200px;
+}
+
+.d100Table, 
+.d100Table2 {
+    border: 5px solid rgba(0, 0, 0, 0);
+}
+

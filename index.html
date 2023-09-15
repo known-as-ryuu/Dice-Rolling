@@ -32,10 +32,14 @@
             border-radius: 2px;
         }
 
-        table {
-            color:white;
-            width: 16%;
+        .d100Table {
             font-size: 18px;
+            float: center;
+        }
+
+        .d100Table2 {
+            font-size: 20px;
+            float: center;
 
         }
         
@@ -43,10 +47,19 @@
             border: 1px solid;
             color: white;
         }
-
+        
+        #console-output { 
+            list-style: none; 
+        }
+        .console-message { 
+            border-top: 1px solid;
+        }
 
     </style>
     
+        
+
+
 </head>
 <body>
     <center>
@@ -108,8 +121,9 @@
 
         <br>
 
+<div class="tabelas">
         <!-- Tabela de Status -->
-        <table style="text-align: center;">
+        <table class="d100Table" style="text-align: center;">
             <tr>
                 <th></th>
                 <th>Status</th>
@@ -119,7 +133,9 @@
                 <td><img src="Data/força.png" width="18"> Força</td>
                 <td>
                     <input type="number" class="d100Table" id="Força">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -127,76 +143,151 @@
                     <img src="Data/magia.png" width="18"> Magia</td>
                     <td>
                         <input type="number" class="d100Table" id="Magia">
-                        <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                        <button class="roll-table" onclick="rollD100Table()">
+                            <img src="Data/dices.png" width="16">
+                        </button>
                     </td>
             </tr>
             <tr>
                 <td><img src="Data/esquiva.png" width="18px"> Esquiva</td>
                 <td>
                     <input type="number" class="d100Table" id="Esquiva">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/resistencia.png" width="18px"> Resistência</td>
                 <td>
                     <input type="number" class="d100Table" id="Resistência">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/destreza.png" width="18px"> Destreza</td>
                 <td>
                     <input type="number" class="d100Table" id="Destreza">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/procurar.png" width="18px"> Procurar</td>
                 <td>
                     <input type="number" class="d100Table" id="Procurar">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/escutar.png" width="18px"> Escutar</td>
                 <td>
                     <input type="number" class="d100Table" id="Escutar">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/furtividade.png" width="18px"> Furtividade</td>
                 <td>
                     <input type="number" class="d100Table" id="Furtividade">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/medicina.png" width="18px"> Medicina</td>
                 <td>
                     <input type="number" class="d100Table" id="Medicina">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td><img src="Data/labia2.png" width="18px"> Lábia</td>
                 <td>
                     <input type="number" class="d100Table" id="Lábia">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Data/modo.png" width="18px"> Modo</td>
-                <td>
-                    <input type="number" class="d100Table" id="Modo">
-                    <button class="roll-table" onclick="rollD100Table()">Roll</button>
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
                 </td>
             </tr>
           </table>
-          <button class="clearTable" onclick="clearTable()">Clear</button>
-    
 
+          
+        <!-- Tabela de Status Secundários -->
+        <table class="d100Table2" style="text-align: center;">
+            <tr>
+                <th></th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td><img src="Data/modo.png" width="18"> Percepção</td>
+                <td>
+                    <input type="number" class="d100Table" id="Percepção">
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Data/atirar.png" width="18"> Atirar</td>
+                    <td>
+                        <input type="number" class="d100Table" id="Atirar">
+                        <button class="roll-table" onclick="rollD100Table()">
+                            <img src="Data/dices.png" width="16">
+                        </button>
+                    </td>
+            </tr>
+            <tr>
+                <td><img src="Data/mirar.png" width="18px"> Mirar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Mirar">
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/intimidar.png" width="18px"> Intimidar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Intimidar">
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/roubar.png" width="18px"> Roubar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Roubar">
+                    <button class="roll-table" onclick="rollD100Table()">
+                        <img src="Data/dices.png" width="16">
+                    </button>
+                </td>
+            </tr>
+          </table>
+</div> 
+
+
+
+
+          <button class="clearTable" id="clear1" onclick="clearTable()">
+            <img src="Data/refresh.png" width="18"></button>
+
+          <button class="clearTable" id="clear2" onclick="clearTable()">
+        <img src="Data/refresh.png" width="18"> </button>
+   
         <!-- D100 de status -->
         <div class="d100-calculation-container input-container">
             <label class="insert-stats" for="d100Input">Status aqui:</label>
@@ -205,12 +296,14 @@
             <p id="d100Result" class="result-text"></p>
         </div>
 
-        <br>
-    
+    <br>
+
+
 
         <!-- Divisória -->
         <hr class="rounded">
-        
+    
+
         <!-- Texto -->
         <h2>
             <i><b>A calculadora calcula os seguintes cálculos para o resultado ser calculado:</b></i><br>
