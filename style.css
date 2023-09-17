@@ -343,13 +343,13 @@ button.clearTable:hover {
     display: flex;
     justify-content: center;
     margin-bottom: initial;
-    margin-top: 9.5rem;
+    margin-top: 195px;
 }
 
 .d100Table2 input[type="number"] {
     padding: 4px;
     margin-top: -8px;
-    margin-bottom: 5px;
+
 }
 
 .historico {
@@ -360,12 +360,23 @@ button.clearTable:hover {
     overflow: auto;
 }
 
+
+
+#toggleButton {
+    position: absolute;
+    top: 555px;
+    right: 735px;
+    z-index: 1;
+    border: 5px solid rgba(0, 0, 0, 0);
+}
+
 .d100Tabela, 
 .d100Table2,
 .historico {
     border: 5px solid rgba(0, 0, 0, 0);
     width: 16rem;
 }
+
 
 .icone {
     width: 25px;

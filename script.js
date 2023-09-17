@@ -390,7 +390,6 @@ RoubarElement.addEventListener("input", () => {
 
 
 // Botao Hidden
-let isBlackBackground = false; // Inicialmente, o background não é preto
 
 function toggleBackground() {
   const inputs = document.querySelectorAll('.d100Table');
@@ -399,6 +398,7 @@ function toggleBackground() {
     input.classList.toggle('black-bg'); // Alterna a classe para cada input individualmente
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("loaded");
