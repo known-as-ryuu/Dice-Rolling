@@ -351,7 +351,7 @@ ProcurarElement.addEventListener("input", () => {
 });
 
 EscutarElement.addEventListener("input", () => {
-  localStorage.setItem("valorEscutar", EsquivaElement.value);
+  localStorage.setItem("valorEscutar", EscutarElement.value);
 });
 
 FurtividadeElement.addEventListener("input", () => {
