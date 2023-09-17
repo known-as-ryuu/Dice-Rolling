@@ -1,4 +1,5 @@
-﻿function rollDice(sides) {
+﻿
+function rollDice(sides) {
     var resultElement = document.getElementById('result');
     var rolledNumberElement = document.getElementById('rolledNumber');
     var clearButton = document.getElementById('clearResultButton');
@@ -19,7 +20,9 @@ function clearResults() {
     clearButton.style.display = 'none'; // Oculta o botao de limpar outra vez
 }
 
-function rollD100() {
+
+// DADO NORMAL
+function roll() {
     var d100Input = parseInt(document.getElementById('d100Input').value);
     var d100ResultElement = document.getElementById('d100Result');
 
@@ -28,7 +31,6 @@ function rollD100() {
         d100ResultElement.textContent = 'Digite um número válido.';
   } else {
         var d100Roll = Math.floor(Math.random() * 100) + 1;
-        console.log("Resultado:", d100Roll, "(Default)");
         var TriumphThreshold = 1;
         var DisasterThreshold = 100;
         var minusExtremeThreshold = d100Input * 0.02;
@@ -65,16 +67,120 @@ function rollD100() {
       }
       
       d100ResultElement.textContent = resultText;
-        console.log(resultText, "(Default)")
+      console.log(resultText, texto)
     }
 }
-  document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("loaded");
-  });
 
 
+// DADO TABELA
+function rollTableForParameter(parameterName, resultElementId) {
+  var parameterValue = parseInt(document.getElementById(parameterName).value);
+  var d100ResultElement = document.getElementById(resultElementId);
 
-function clearTable() {
+  if (isNaN(parameterValue)) {
+    d100ResultElement.textContent = 'Digite um número válido.';
+    return;
+  }
+
+  var d100Roll = Math.floor(Math.random() * 100) + 1;
+  var resultText = 'Resultado: ' + d100Roll;
+
+  if (d100Roll === 1) {
+    resultText += ' - Triunfo!!! 👑';
+  } else if (d100Roll === 100) {
+    resultText += ' - Desastre!!! ⚰️';
+  } else {
+    if (d100Roll >= parameterValue * 1.50 && d100Roll <= 99) {
+      resultText += ' - Grande Falha';
+    } else if (d100Roll >= parameterValue * 1.25 && d100Roll <= parameterValue * 1.499) {
+      resultText += ' - Falha';
+    } else if (d100Roll >= parameterValue * 1.01 && d100Roll <= parameterValue * 1.249) {
+      resultText += ' - Pequena Falha';
+    } else if (d100Roll >= parameterValue * 0.02 && d100Roll <= parameterValue * 0.25) {
+      resultText += ' - Extremo';
+    } else if (d100Roll >= parameterValue * 0.251 && d100Roll <= parameterValue * 0.5) {
+      resultText += ' - Bom';
+    } else if (d100Roll >= parameterValue * 0.501 && d100Roll <= parameterValue * 1) {
+      resultText += ' - Normal';
+    }
+  }
+
+  d100ResultElement.textContent = resultText;
+  console.log(resultText, texto);
+}
+
+// 1ª Tabela
+function rollD100() {
+  texto = "(Default)"
+  roll()
+}
+function rollForça() {
+  texto = "(Força)"
+  rollTableForParameter('Força', 'd100Result')
+}
+function rollMagia() {
+  texto = "(Magia)"
+  rollTableForParameter('Magia', 'd100Result')
+}
+function rollEsquiva() {
+  texto = "(Esquiva)"
+  rollTableForParameter('Esquiva', 'd100Result')
+}
+function rollResistência() {
+  texto = "(Resistência)"
+  rollTableForParameter('Resistência', 'd100Result')
+}
+function rollDestreza() {
+  texto = "(Destreza)"
+  rollTableForParameter('Destreza', 'd100Result')
+}
+function rollProcurar() {
+  texto = "(Procurar)"
+  rollTableForParameter('Procurar', 'd100Result')
+}
+function rollEscutar() {
+  texto = "(Escutar)"
+  rollTableForParameter('Escutar', 'd100Result')
+}
+function rollFurtividade() {
+  texto = "(Furtividade)"
+  rollTableForParameter('Furtividade', 'd100Result')
+}
+function rollMedicina() {
+  texto = "(Medicina)"
+  rollTableForParameter('Medicina', 'd100Result')
+}
+function rollLábia() {
+  texto = "(Lábia)"
+  rollTableForParameter('Lábia', 'd100Result')
+}
+
+
+// 2ª TABELA
+function rollPercepção() {
+  texto = "(Percepção)"
+  rollTableForParameter('Percepção', 'd100Result')
+}
+function rollAtirar() {
+  texto = "(Atirar)"
+  rollTableForParameter('Atirar', 'd100Result')
+}
+function rollMirar() {
+  texto = "(Mirar)"
+  rollTableForParameter('Mirar', 'd100Result')
+}
+function rollIntimidar() {
+  texto = "(Intimidar)"
+  rollTableForParameter('Intimidar', 'd100Result')
+}
+function rollRoubar() {
+  texto = "(Roubar)"
+  rollTableForParameter('Roubar', 'd100Result')
+}
+
+
+ // 1o botao
+function clearTable1() {
   const ForçaElement = document.getElementById("Força")
   const MagiaElement = document.getElementById("Magia");
   const EsquivaElement = document.getElementById("Esquiva");
@@ -85,10 +191,9 @@ function clearTable() {
   const FurtividadeElement = document.getElementById("Furtividade");
   const MedicinaElement = document.getElementById("Medicina");
   const LabiaElement = document.getElementById("Lábia");
-  const ModoElement = document.getElementById("Modo");
 
-
-  ForçaElement.value = ''; // Limpa o conteúdo da caixa de texto
+  // Limpa o conteúdo da caixa de texto
+  ForçaElement.value = ''; 
   MagiaElement.value = '';
   EsquivaElement.value = '';
   ResistenciaElement.value = '';
@@ -98,9 +203,9 @@ function clearTable() {
   FurtividadeElement.value = '';
   MedicinaElement.value = '';
   LabiaElement.value = '';
-  ModoElement.value = '';
 
-  localStorage.removeItem('valorForça'); // Remove os dados armazenados
+  // Remove os dados armazenados
+  localStorage.removeItem('valorForça'); 
   localStorage.removeItem('valorMagia');
   localStorage.removeItem('valorEsquiva');
   localStorage.removeItem('valorResistencia');
@@ -111,10 +216,31 @@ function clearTable() {
   localStorage.removeItem('valorMedicina');
   localStorage.removeItem('valorLabia');
   localStorage.removeItem('valorModo');
+
+}
+ // 2o botao
+function clearTable2() {
+  const PercepcaoElement = document.getElementById("Percepção");
+  const AtirarElement = document.getElementById("Atirar");
+  const MirarElement = document.getElementById("Mirar");
+  const IntimidarElement = document.getElementById("Intimidar");
+  const RoubarElement = document.getElementById("Roubar"); 
+
+  PercepcaoElement.value = '';
+  AtirarElement.value = '';
+  MirarElement.value = '';
+  IntimidarElement.value = '';
+  RoubarElement.value = '';
+
+  localStorage.removeItem('valorPercepcao');
+  localStorage.removeItem('valorAtirar');
+  localStorage.removeItem('valorMirar');
+  localStorage.removeItem('valorIntimidar');
+  localStorage.removeItem('valorRoubar');
+
 }
 
-
-// iguala os valores dos elementos no html às constantes criadas<
+// iguala os valores dos elementos no html às constantes criadas
 const ForçaElement = document.getElementById("Força");
 const MagiaElement = document.getElementById("Magia");
 const EsquivaElement = document.getElementById("Esquiva");
@@ -125,7 +251,14 @@ const EscutarElement = document.getElementById("Escutar");
 const FurtividadeElement = document.getElementById("Furtividade");
 const MedicinaElement = document.getElementById("Medicina");
 const LabiaElement = document.getElementById("Lábia");
-const ModoElement = document.getElementById("Modo");
+
+const PercepcaoElement = document.getElementById("Percepção");
+const AtirarElement = document.getElementById("Atirar");
+const MirarElement = document.getElementById("Mirar");
+const IntimidarElement = document.getElementById("Intimidar");
+const RoubarElement = document.getElementById("Roubar");
+
+
 
 // verifica se existem valores no localStorage e, se houver, preenche os campos de input
 if (localStorage.getItem("valorForça")) {
@@ -167,9 +300,29 @@ if (localStorage.getItem("valorLabia")) {
     LabiaElement.value = localStorage.getItem("valorLabia");
   }
 
-if (localStorage.getItem("valorModo")) {
-    ModoElement.value = localStorage.getItem("valorModo");
-  }
+
+
+  if (localStorage.getItem("valorPercepcao")) {
+    PercepcaoElement.value = localStorage.getItem("valorPercepcao");
+}
+
+if (localStorage.getItem("valorAtirar")) {
+    AtirarElement.value = localStorage.getItem("valorAtirar");
+}
+
+if (localStorage.getItem("valorMirar")) {
+    MirarElement.value = localStorage.getItem("valorMirar");
+}
+
+if (localStorage.getItem("valorIntimidar")) {
+    IntimidarElement.value = localStorage.getItem("valorIntimidar");
+}
+
+if (localStorage.getItem("valorRoubar")) {
+    RoubarElement.value = localStorage.getItem("valorRoubar");
+}
+
+
 
 
 // adiciona um evento para salvar os valores no localStorage quando forem inseridos dados
@@ -213,8 +366,30 @@ LabiaElement.addEventListener("input", () => {
   localStorage.setItem("valorLabia", LabiaElement.value);
 });
 
-ModoElement.addEventListener("input", () => {
-  localStorage.setItem("valorModo", ModoElement.value);
+
+
+PercepcaoElement.addEventListener("input", () => {
+  localStorage.setItem("valorPercepcao", PercepcaoElement.value);
+});
+
+AtirarElement.addEventListener("input", () => {
+  localStorage.setItem("valorAtirar", AtirarElement.value);
+});
+
+MirarElement.addEventListener("input", () => {
+  localStorage.setItem("valorMirar", MirarElement.value);
+});
+
+IntimidarElement.addEventListener("input", () => {
+  localStorage.setItem("valorIntimidar", IntimidarElement.value);
+});
+
+RoubarElement.addEventListener("input", () => {
+  localStorage.setItem("valorRoubar", RoubarElement.value);
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("loaded");
+});

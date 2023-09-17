@@ -28,9 +28,13 @@
 
         /* Rounded border */
         hr.rounded {
-            border-top: 3px solid #3e3e42;
+            border: 3px solid #3e3e42;
             border-radius: 2px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
+
+
 
         .d100Table {
             font-size: 18px;
@@ -40,7 +44,6 @@
         .d100Table2 {
             font-size: 20px;
             float: center;
-
         }
         
         th, td {
@@ -55,10 +58,113 @@
             border-top: 1px solid;
         }
 
-    </style>
-    
-        
+        #tabela-container {
+            max-height: 26.88rem;
+            overflow-y: auto;
+        }
 
+
+    </style>
+    <script type="module">
+        const list = document.getElementById("consoleOutput");
+        
+        // cria a referencia ao metodo original do console.log 
+        const originalLogMethod = console.log.bind(console);
+
+        // reescreve-o com um custom fn que também invoca o "print" fn acima
+        console.log = (...values) => {
+            originalLogMethod(...values);
+            if (values.length > 0 && typeof values[0] === 'string' && values[0].startsWith('Resultado:')) {
+                print(...values);
+            }
+        };
+
+function print(...values) {
+    const listItem = document.createElement('p');
+    listItem.classList.add('console-message');
+
+    for (const value of values) {
+        const pre = document.createElement('pre');
+        const code = document.createElement('code');
+        
+        // Verifica se o valor é uma string
+        if (typeof value === 'string') {
+            // Divide a string em palavras
+            const words = value.split(' ');
+
+            // Cria uma nova string com as palavras coloridas
+            const formattedValue = words.map(word => {
+                // Dado Rodado  
+                  if (word === '(Default)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Força)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Magia)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Esquiva)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(ResisTência)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Destreza)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Procurar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Escutar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Furtividade)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Medicina)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Lábia)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Percepção)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Atirar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Mirar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Intimidar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                } if (word === '(Roubar)') {
+                    return `<span class="cor-default">${word}</span>`;
+                }
+                // Taxa de Sucesso  
+                  if (word === 'Grande') {
+                    return `<span class="cor-grandeFalha">${word}</span>`;
+                } if (word === 'Falha') {
+                    return `<span class="cor-falha">${word}</span>`;
+                } if (word === 'Pequena') {
+                    return `<span class="cor-pequenaFalha">${word}</span>`;
+                } if (word === 'Normal') {
+                    return `<span class="cor-normal">${word}</span>`;
+                } if (word === 'Bom') {
+                    return `<span class="cor-bom">${word}</span>`;
+                } if (word === 'Extremo') {
+                    return `<span class="cor-extremo">${word}</span>`;
+                } if (word === 'Triunfo!!!') {
+                    return `<span class="cor-triunfo">${word}</span>`;
+                } if (word === 'Desastre!!!') {
+                    return `<span class="cor-desastre">${word}</span>`;
+                }
+                                
+                return word;
+            }).join(' ');
+
+            // Define a string formatada como conteúdo
+            code.innerHTML = formattedValue;
+        } else {
+            // Se não for uma string, apenas converte para string
+            code.textContent = JSON.stringify(value, null, 2);
+        }
+
+        pre.appendChild(code);
+        listItem.appendChild(pre);
+    }
+
+    list.appendChild(listItem);
+}
+    </script>
+        
 
 </head>
 <body>
@@ -121,7 +227,7 @@
 
         <br>
 
-<div class="tabelas">
+<div style="line-height: 2rem; vertical-align: center;" class="tabelas">
         <!-- Tabela de Status -->
         <table class="d100Table" style="text-align: center;">
             <tr>
@@ -130,93 +236,93 @@
             </tr>
 
             <tr>
-                <td><img src="Data/força.png" width="18"> Força</td>
+                <td><img src="Data/força (2).png" class="icone"> Força</td>
                 <td>
-                    <input type="number" class="d100Table" id="Força">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <input type="number" class="d100Table" id="Força"></span>
+                    <button class="roll-table" onclick="rollForça()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="Data/magia.png" width="18"> Magia</td>
+                    <img src="Data/magia (2).png" class="icone"> Magia</td>
                     <td>
-                        <input type="number" class="d100Table" id="Magia">
-                        <button class="roll-table" onclick="rollD100Table()">
-                            <img src="Data/dices.png" width="16">
+                        <input type="number" class="d100Table" class="d100Input" id="Magia">
+                        <button class="roll-table" onclick="rollMagia()">
+                            <img src="Data/dices.png" width="18">
                         </button>
                     </td>
             </tr>
             <tr>
-                <td><img src="Data/esquiva.png" width="18px"> Esquiva</td>
+                <td><img src="Data/esquiva.png" class="icone"> Esquiva</td>
                 <td>
                     <input type="number" class="d100Table" id="Esquiva">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollEsquiva()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/resistencia.png" width="18px"> Resistência</td>
+                <td><img src="Data/resistencia (2).png" class="icone"> Resistência</td>
                 <td>
                     <input type="number" class="d100Table" id="Resistência">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollResistencia()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/destreza.png" width="18px"> Destreza</td>
+                <td><img src="Data/destreza (2).png" class="icone"> Destreza</td>
                 <td>
                     <input type="number" class="d100Table" id="Destreza">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollDestreza()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/procurar.png" width="18px"> Procurar</td>
+                <td><img src="Data/procurar.png" class="icone"> Procurar</td>
                 <td>
                     <input type="number" class="d100Table" id="Procurar">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollProcurar()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/escutar.png" width="18px"> Escutar</td>
+                <td><img src="Data/escutar (2).png" class="icone"> Escutar</td>
                 <td>
                     <input type="number" class="d100Table" id="Escutar">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollEscutar()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/furtividade.png" width="18px"> Furtividade</td>
+                <td><img src="Data/furtividade.png" class="icone"> Furtividade</td>
                 <td>
                     <input type="number" class="d100Table" id="Furtividade">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollFurtividade()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/medicina.png" width="18px"> Medicina</td>
+                <td><img src="Data/medicina (2).png" class="icone"> Medicina</td>
                 <td>
                     <input type="number" class="d100Table" id="Medicina">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollMedicina()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/labia2.png" width="18px"> Lábia</td>
+                <td><img src="Data/labia2.png" class="icone"> Lábia</td>
                 <td>
                     <input type="number" class="d100Table" id="Lábia">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollLabia()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
@@ -234,8 +340,8 @@
                 <td><img src="Data/modo.png" width="18"> Percepção</td>
                 <td>
                     <input type="number" class="d100Table" id="Percepção">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollPercepção()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
@@ -244,8 +350,8 @@
                     <img src="Data/atirar.png" width="18"> Atirar</td>
                     <td>
                         <input type="number" class="d100Table" id="Atirar">
-                        <button class="roll-table" onclick="rollD100Table()">
-                            <img src="Data/dices.png" width="16">
+                        <button class="roll-table" onclick="rollAtirar()">
+                            <img src="Data/dices.png" width="18">
                         </button>
                     </td>
             </tr>
@@ -253,8 +359,8 @@
                 <td><img src="Data/mirar.png" width="18px"> Mirar</td>
                 <td>
                     <input type="number" class="d100Table" id="Mirar">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollMirar()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
@@ -262,30 +368,36 @@
                 <td><img src="Data/intimidar.png" width="18px"> Intimidar</td>
                 <td>
                     <input type="number" class="d100Table" id="Intimidar">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollIntimidar()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/roubar.png" width="18px"> Roubar</td>
+                <td><img src="Data/roubar.png" width="20px"> Roubar</td>
                 <td>
                     <input type="number" class="d100Table" id="Roubar">
-                    <button class="roll-table" onclick="rollD100Table()">
-                        <img src="Data/dices.png" width="16">
+                    <button class="roll-table" onclick="rollRoubar()">
+                        <img src="Data/dices.png" width="18">
                     </button>
                 </td>
             </tr>
           </table>
+    <div id="tabela-container">
+        <table id="tabela-historico" class="historico" style="text-align: center;">
+            <tr>
+                <td><b>Histórico</b><p id="consoleOutput"></p></td>
+            </tr>
+        </table>
+    </div>
 </div> 
 
 
 
-
-          <button class="clearTable" id="clear1" onclick="clearTable()">
+          <button class="clearTable" id="clear1" onclick="clearTable1()">  <!-- Mudar para clearTable1 e clearTable2-->
             <img src="Data/refresh.png" width="18"></button>
 
-          <button class="clearTable" id="clear2" onclick="clearTable()">
+          <button class="clearTable" id="clear2" onclick="clearTable2()">
         <img src="Data/refresh.png" width="18"> </button>
    
         <!-- D100 de status -->
@@ -297,8 +409,9 @@
         </div>
 
     <br>
+    <br>
 
-
+    
 
         <!-- Divisória -->
         <hr class="rounded">
@@ -309,6 +422,7 @@
             <i><b>A calculadora calcula os seguintes cálculos para o resultado ser calculado:</b></i><br>
         </h2>
         <p>
+            <br>
             <i>O personagem tem 40 de força</i><br>
             <br>
             Se tirar 1 no dado será um triunfo<br>
