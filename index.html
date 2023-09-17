@@ -4,6 +4,7 @@
     <title>Dice Rolling</title>
     <link rel="icon" type="image/x-icon" href="/Data/big icon.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         p {
@@ -34,7 +35,10 @@
             margin-bottom: 20px;
         }
 
-
+        .d100Tabela {
+            font-size: 18px;
+            float: center;
+        }
 
         .d100Table {
             font-size: 18px;
@@ -227,9 +231,13 @@ function print(...values) {
 
         <br>
 
+        <button class="roll-table" onclick="toggleBackground()">
+            Toggle Background
+          </button>
+
 <div style="line-height: 2rem; vertical-align: center;" class="tabelas">
         <!-- Tabela de Status -->
-        <table class="d100Table" style="text-align: center;">
+        <table class="d100Tabela" style="text-align: center;">
             <tr>
                 <th></th>
                 <th>Status</th>
