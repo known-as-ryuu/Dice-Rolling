@@ -386,9 +386,9 @@ button.clearTable:hover {
     text-shadow:0 0 15px rgba(1, 141, 1, 0.7)
 }
 .cor-desastre {
-    color: #330002;
+    color: #680003;
     font-weight: bold;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    text-shadow: 0 0 15px rgba(110, 0, 0, 0.7);
 }
 
 
