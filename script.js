@@ -398,16 +398,16 @@ function toggleBackground() {
     input.classList.toggle('black-bg'); // Alterna a classe para cada input individualmente
 
   });
-  // Verifica se o primeiro input tem a clase 'black-bg' e armazena o estado no localStorage
+  // Vê se o input tem a clase 'black-bg' e armazena o estado no localStorage ('true' ou 'false')
   const isBlackBackground = inputs[0].classList.contains('black-bg');
   localStorage.setItem("valorBg", isBlackBackground);
 }
 
-// Verifica se há um valor armazenado no LocalStorage ao carregar a página
+// Verifica se valorBg esta armazenado no LocalStorage ao carregar a página
 const valorBg = localStorage.getItem("valorBg");
 
 if (valorBg === "true") {
-  // Se o valor for "true", significa que o background deve ser preto
+  // Se valorBg for "true", significa que o background deve estar preto
   const inputs = document.querySelectorAll('.d100Table');
   inputs.forEach(input => {
     input.classList.add('black-bg')
