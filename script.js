@@ -419,3 +419,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// --------------------------------------------------
+// ----------------- RANDOMIZADOR -------------------
+// --------------------------------------------------
+// Acessando elementos do HTML
+const minInput = document.getElementById("minInput");
+const maxInput = document.getElementById("maxInput");
+const randomButton = document.getElementById("randomButton");
+const result = document.getElementById("randomResult");
+
+// Adicionando um evento de clique ao botão
+randomButton.addEventListener("click", function() {
+  const min = parseFloat(minInput.value);
+  const max = parseFloat(maxInput.value);
+
+  if (isNaN(min) || isNaN(max)) {
+      result.innerHTML = "Insira valores válidos.";
+  } else if (min >= max) {
+      result.innerHTML = "O valor mínimo deve ser menor que o valor máximo.";
+  } else {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      result.innerHTML = `<i>Resultado: <span class="randomNumber-Color">${randomNumber}</span> - Gongástico!!</i>`;
+  }
+});
