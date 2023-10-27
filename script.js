@@ -103,6 +103,10 @@ function rollTableForParameter(parameterName, resultElementId) {
     } else if (d100Roll >= parameterValue * 0.501 && d100Roll <= parameterValue * 1) {
       resultText += ' - Normal';
     }
+    // } else if (d100Roll >= parameterValue * 0.501 && d100Roll <= parameterValue * 1) {
+    //   resultText += ' - <b><span class="red">Normal</span></b>';
+
+    // }
   }
 
   d100ResultElement.textContent = resultText;

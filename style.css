@@ -130,6 +130,7 @@ body {
     border-radius: 1000px;
     margin-left: 5px;
     font-size: 15px;
+    padding: 0 3px;
     vertical-align: middle;
 }
 
@@ -156,6 +157,10 @@ body {
     display: inline-block;
 }
 
+.red {
+    color: red;
+    font-style: bold;
+}
 
 /* Pré-carregar as imagens */
 .dice-group .resized-image {
@@ -343,7 +348,7 @@ button.clearTable:hover {
     display: flex;
     justify-content: center;
     margin-bottom: initial;
-    margin-top: 195px;
+    margin-top: 10.5vw;
 }
 
 .d100Table2 input[type="number"] {
@@ -364,7 +369,7 @@ button.clearTable:hover {
 
 #toggleButton {
     position: relative;
-    top: 20vh;
+    top: 10vw;
     z-index: 1;
     border: 5px solid rgba(0, 0, 0, 0);
 }
