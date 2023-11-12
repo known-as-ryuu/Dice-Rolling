@@ -34,6 +34,11 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+        hr.rounded2 {
+            border: 1px solid #3e3e42;
+            border-radius: 2px;
+            margin-top: 25px;
+        }
 
         .d100Tabela {
             font-size: 18px;
@@ -235,7 +240,7 @@ function print(...values) {
 
 <div style="line-height: 2rem; vertical-align: center;" class="tabelas">
         <!-- Tabela de Status -->
-        <table class="d100Tabela" style="text-align: center;">
+        <table class="d100Tabela" id="first" style="text-align: center;">
             <tr>
                 <th></th>
                 <th>Status</th>
@@ -336,14 +341,67 @@ function print(...values) {
 
           
         <!-- Tabela de Status Secundários -->
-        <table class="d100Table2" style="text-align: center;">
+        <table class="d100Tabela" id="second" style="text-align: center;">
             <tr>
                 <th></th>
                 <th>Status</th>
             </tr>
-
             <tr>
-                <td><img src="Data/modo.png" width="18"> Percepção</td>
+                <td><img src="Data/skill.png" class="icone"> Habilidade</td>
+                <td>
+                    <input type="number" class="d100Table" id="Habilidade">
+                    <button class="roll-table" onclick="rollHabilidade()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/int.png" class="icone"> Inteligência</td>
+                <td>
+                    <input type="number" class="d100Table" id="Inteligência">
+                    <button class="roll-table" onclick="rollInteligência()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/flow2.png" class="icone"> Flow</td>
+                <td>
+                    <input type="number" class="d100Table" id="Flow">
+                    <button class="roll-table" onclick="rollFlow()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/mov.png" class="icone">Movimentação</td>
+                <td>
+                    <input type="number" class="d100Table" id="Movimentação">
+                    <button class="roll-table" onclick="rollMovimentação()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/imobilizar.png" class="icone"> Imobilizar</td>
+                <td>
+                    <input type="number" class="d100Table" id="Imobilizar">
+                    <button class="roll-table" onclick="rollImobilizar()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/sorte.png" class="icone"> Sorte</td>
+                <td>
+                    <input type="number" class="d100Table" id="Sorte">
+                    <button class="roll-table" onclick="rollSorte()">
+                        <img src="Data/dices.png" width="18">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="Data/modo.png" class="icone"> Percepção</td>
                 <td>
                     <input type="number" class="d100Table" id="Percepção">
                     <button class="roll-table" onclick="rollPercepção()">
@@ -353,7 +411,7 @@ function print(...values) {
             </tr>
             <tr>
                 <td>
-                    <img src="Data/atirar.png" width="18"> Atirar</td>
+                    <img src="Data/atirar.png" class="icone"> Atirar</td>
                     <td>
                         <input type="number" class="d100Table" id="Atirar">
                         <button class="roll-table" onclick="rollAtirar()">
@@ -362,7 +420,7 @@ function print(...values) {
                     </td>
             </tr>
             <tr>
-                <td><img src="Data/mirar.png" width="18px"> Mirar</td>
+                <td><img src="Data/mirar.png" class="icone"> Mirar</td>
                 <td>
                     <input type="number" class="d100Table" id="Mirar">
                     <button class="roll-table" onclick="rollMirar()">
@@ -371,7 +429,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/intimidar.png" width="18px"> Intimidar</td>
+                <td><img src="Data/intimidar.png" class="icone"> Intimidar</td>
                 <td>
                     <input type="number" class="d100Table" id="Intimidar">
                     <button class="roll-table" onclick="rollIntimidar()">
@@ -380,7 +438,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/roubar.png" width="20px"> Roubar</td>
+                <td><img src="Data/roubar.png" class="icone"> Roubar</td>
                 <td>
                     <input type="number" class="d100Table" id="Roubar">
                     <button class="roll-table" onclick="rollRoubar()">
@@ -421,6 +479,37 @@ function print(...values) {
         <input id="maxInput" type="number" inputmode=”numeric” class="randomizer-input" placeholder="Máx"></input>
         <button id="randomButton" onclick="RandomizedRoll()" class="randomizer-button">Roll</button>
         <div id="randomResult"></div>
+        
+        <hr class="rounded2">
+    <div class="macros">
+<br>
+        <div id="macro-form">
+            <p class="bigTxt">Criar Macro</p>
+            <form id="new-macro-form">
+              <input class="randomizer-input" type="text" autocomplete="off" id="macro-name" placeholder="Nome" required>
+              <input class="randomizer-input" type="text" autocomplete="off" id="macro-formula" placeholder="5-10" required>
+              <button class="saveBtn" type="submit"><img style="width:16px;" src="/Data/save.png" alt="Salvar"></button>
+            </form>
+          </div>
+<br>
+          <div id="macro-list">
+            <p class="bigTxt">Macros</p>
+            <div class="macro-overflow-table">
+            <ul id="macros">
+              <!-- Lista de macros -->
+            </ul>
+            </div>
+        </div>
+<br>
+          <div id="macro-results">
+            <p class="bigTxt">Resultados</p>
+            <div class="macro-overflow-table">
+                <ul id="results">
+                    <!-- Resultados macros -->
+                  </ul>
+            </div>
+          </div>
+    </div>
     </div>
     
 

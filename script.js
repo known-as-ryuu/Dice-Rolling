@@ -446,3 +446,179 @@ randomButton.addEventListener("click", function() {
       result.innerHTML = `<i>Resultado: <span class="randomNumber-Color">${randomNumber}</span> - Gongástico!!</i>`;
   }
 });
+
+
+
+
+// --------------------------------------------------
+// -------------------- MACROS ----------------------
+// --------------------------------------------------
+
+    // Função para criar uma nova macro
+    function createMacro(name, formula) {
+      return { name, formula };
+    }
+
+    // Função para adicionar uma macro à lista
+    function addMacroToList(macro) {
+      const macrosList = document.getElementById('macros');
+      const listItem = document.createElement('li');
+      listItem.classList.add('macro-item'); // Adiciona a classe para layout flexível
+
+      // Adicionar botão para rolar a macro
+      const rollButton = document.createElement('button');
+      rollButton.classList.add('rolarBtn');
+      rollButton.onclick = function () {
+        rollMacro(macro);
+      };
+      const rollImage = document.createElement('img');
+      rollImage.src = '/Data/dice.png';
+      rollImage.alt = 'Rolar';
+      rollImage.classList.add('resized');
+      rollButton.appendChild(rollImage);
+
+      // Adicionar texto da macro
+      const macroText = document.createElement('span');
+      macroText.textContent = `${macro.name} - (${macro.formula})`;
+
+      // Adicionar botão para apagar a macro
+      const deleteButton = document.createElement('button');
+      deleteButton.classList.add('delBtn');
+      deleteButton.onclick = function () {
+        deleteMacro(macro);
+      };
+      const delImg = document.createElement('img');
+      delImg.src = '/Data/clear.png';
+      delImg.alt = 'Apagar';
+      delImg.classList.add('resized');
+      deleteButton.appendChild(delImg);
+
+
+      listItem.appendChild(rollButton);
+      listItem.appendChild(macroText);
+      listItem.appendChild(deleteButton);
+
+      macrosList.appendChild(listItem);
+    }
+
+    // Função para apagar uma macro individualmente
+    function deleteMacro(macro) {
+      const macrosList = document.getElementById('macros');
+      const listItems = macrosList.getElementsByTagName('li');
+
+      for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const [name] = listItem.textContent.split(' - ')[0].split(' - ');
+
+        if (name === macro.name) {
+          macrosList.removeChild(listItem);
+          // Remover a macro salva localmente
+          removeMacroLocally(macro);
+          break;  // Interromper o loop após encontrar a macro correta
+        }
+      }
+    }
+    
+///////////////////////////////////
+////////// - APAGAR - /////////////
+///////////////////////////////////
+
+          // Função para remover uma macro salva localmente
+          function removeMacroLocally(macro) {
+            const savedMacros = JSON.parse(localStorage.getItem('savedMacros')) || [];
+            const updatedMacros = savedMacros.filter(savedMacro => savedMacro.name !== macro.name);
+            localStorage.setItem('savedMacros', JSON.stringify(updatedMacros));
+          }
+
+
+///////////////////////////////////
+/////////// - ROLAR - /////////////
+///////////////////////////////////
+
+// Função para rolar uma macro individualmente
+function rollMacro(macro) {
+  const result = calculateResult(macro.formula);
+
+  const resultsList = document.getElementById('results');
+  const resultItem = document.createElement('li');
+
+  // Adicionar o nome da macro com a classe 'macro-name' (cinza)
+  const nameSpan = document.createElement('span');
+  nameSpan.classList.add('macro-name');
+  nameSpan.textContent = `${macro.name}: `;
+  resultItem.appendChild(nameSpan);
+
+  // Adicionar o resultado com a classe 'macro-result' (vermelho)
+  const resultSpan = document.createElement('span');
+  resultSpan.classList.add('macro-result');
+  resultSpan.textContent = result;
+  resultItem.appendChild(resultSpan);
+
+  resultsList.appendChild(resultItem);
+}
+
+
+// Função para calcular o resultado da fórmula
+function calculateResult(formula) {
+  const match = formula.match(/(\d+)-(\d+)/);
+
+  if (match) {
+    const minValue = parseInt(match[1]);
+    const maxValue = parseInt(match[2]);
+
+    // Verificar se os valores fornecidos são válidos
+    if (!isNaN(minValue) && !isNaN(maxValue)) {
+      // Calcular um valor aleatório dentro do intervalo
+      const result = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+      return result;
+    } else {
+      return "Valores inválidos no intervalo";
+    }
+  } else {
+    return "Fórmula inválida";
+  }
+}
+
+    // Função para salvar macros localmente
+    function saveMacroLocally(macro) {
+      // Utilize localStorage para armazenar macros localmente
+      const savedMacros = JSON.parse(localStorage.getItem('savedMacros')) || [];
+      savedMacros.push(macro);
+      localStorage.setItem('savedMacros', JSON.stringify(savedMacros));
+    }
+
+    // Função para carregar macros salvas localmente
+    function loadSavedMacros() {
+      const savedMacros = JSON.parse(localStorage.getItem('savedMacros')) || [];
+      savedMacros.forEach(macro => {
+        addMacroToList(macro);
+      });
+    }
+
+    // Manipular o envio do formulário
+    document.getElementById('new-macro-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evitar o comportamento padrão do formulário
+
+      // Obter valores do formulário
+      const name = document.getElementById('macro-name').value;
+      const formula = document.getElementById('macro-formula').value;
+
+      // Criar uma nova macro
+      const newMacro = createMacro(name, formula);
+
+      // Adicionar a nova macro à lista
+      addMacroToList(newMacro);
+
+      // Salvar a nova macro localmente
+      saveMacroLocally(newMacro);
+
+      // Limpar o formulário
+      document.getElementById('new-macro-form').reset();
+    });
+
+    // Carregar macros salvas localmente ao carregar a página
+    document.addEventListener('DOMContentLoaded', function () {
+      loadSavedMacros();
+    });
+
+

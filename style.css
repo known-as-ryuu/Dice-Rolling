@@ -13,7 +13,9 @@
 
     /*  max-width: 12vh; */
 
-
+ul {
+  list-style: none;
+}
 
     body {
         font-size: 20px;
@@ -44,6 +46,9 @@ body {
     -webkit-user-drag: none;
     user-select: none;
 }
+ul {
+    list-style: none;
+  }
 
 
 .dice-container {
@@ -288,7 +293,7 @@ input[class="d100Table"] {
         padding-left: 4px;
         margin-top: -6px;
         margin-bottom: 5px;
-    }
+    } 
 
     .black-bg {
         color: transparent;
@@ -317,7 +322,7 @@ input[class="d100Table"] {
 
 
 .clearTable {
-    padding: 4px 112px;
+    padding: 4px 120px;
     background-color: #4d4d4d;
     color: white;
     border: none;
@@ -325,9 +330,9 @@ input[class="d100Table"] {
     cursor: pointer;
     font-size: 15px;
     transition: background-color 0.3s ease-in-out;
-    margin-right: 8.25rem;
-    margin-left: -7.68rem;
-    vertical-align: center;
+    margin-right: 8.7rem;
+    margin-left: -8.2rem;
+    /* vertical-align: center; */
   }
     .clearTable:hover {
     background-color: #3b3b3b;
@@ -338,24 +343,22 @@ button.clearTable:hover {
 }
 
 
-.tabelas {
-    display: flex;
-    justify-content: center; /* centraliza */
-}
 
 
-.d100Table2 {
+
+/* .d100Table2 {
     display: flex;
     justify-content: center;
     margin-bottom: initial;
     margin-top: 10.5vw;
+    max-height: 27rem;
 }
 
 .d100Table2 input[type="number"] {
     padding: 4px;
     margin-top: -8px;
 
-}
+} */
 
 .historico {
     margin-top: initial;
@@ -369,16 +372,29 @@ button.clearTable:hover {
 
 #toggleButton {
     position: relative;
-    top: 10vw;
+    top: -5px;
     z-index: 1;
     border: 5px solid rgba(0, 0, 0, 0);
+}
+
+.tabelas {
+    display: flex;
+    justify-content: center; /* centraliza */
+    /* max-height: 27rem;
+    overflow: auto; */
 }
 
 .d100Tabela, 
 .d100Table2,
 .historico {
     border: 5px solid rgba(0, 0, 0, 0);
-    width: 16rem;
+    width: 17rem;
+}
+#first {
+    height: 477px;
+}
+#second {
+    height: 200px;
 }
 
 
@@ -465,12 +481,12 @@ button.clearTable:hover {
 /* ---------------------------------------- */
 /* ---------------------------------------- */
 .randomizer-container {
-    border: 10px solid #2d2d30;
+    border: 15px solid #2d2d30;
     border-radius: 8px;
     width: 16.4rem;
     background-color: var(--color-smocky-black);
     outline: 2px solid rgba(255, 255, 255, .25);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 20px;
     scale: 1.1;
 }
@@ -520,4 +536,90 @@ input::-webkit-inner-spin-button {
 }
 .randomNumber-Color {
     color: #2cb9af; 
+}
+
+
+
+
+
+/* ---------------------------------------- */
+/* --------------- MACROS ------------------ */
+/* ---------------------------------------- */
+
+.rolarBtn {
+    margin: 0px 5px;
+    padding: 2px;
+    padding-left: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    top: 2px;
+}
+
+.rolarBtn:hover {
+    background-color: darkgray;
+}
+
+.delBtn {
+    margin: 0px 5px;
+    padding: 0px;
+    background-color: inherit;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    top: 3.5px;
+}
+.delBtn:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+.saveBtn {
+    background-color: gray;
+    border: none;
+    padding: 1px 3px;
+    border-radius: 6px;
+    position: relative;
+    top: 2px;
+    margin: 0px -8px;
+    transition: transform .25s ease;
+}
+.saveBtn:hover{
+    transform: scale(1.1);
+}
+
+.resized {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: grid;
+    align-self: center;
+}
+
+.macros {
+    color: white;
+}
+.macro-item, .macro-name {
+    font-style: italic;
+    color: rgb(170, 170, 170);
+  }
+    .macro-result {
+        font-style: italic;
+        color: #2cb9af; 
+    }
+    .macro-overflow-table {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+.bigTxt {
+    font-size: 22px;
+    
+}
+#new-macro-form {
+    margin-top: 5px;
 }
