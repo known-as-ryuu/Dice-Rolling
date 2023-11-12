@@ -566,6 +566,10 @@ randomButton.addEventListener("click", function() {
       macrosList.appendChild(listItem);
     }
 
+///////////////////////////////////
+////////// - APAGAR - /////////////
+///////////////////////////////////
+
     // Função para apagar uma macro individualmente
     function deleteMacro(macro) {
       const macrosList = document.getElementById('macros');
@@ -583,17 +587,12 @@ randomButton.addEventListener("click", function() {
         }
       }
     }
-    
-///////////////////////////////////
-////////// - APAGAR - /////////////
-///////////////////////////////////
-
-          // Função para remover uma macro salva localmente
-          function removeMacroLocally(macro) {
-            const savedMacros = JSON.parse(localStorage.getItem('savedMacros')) || [];
-            const updatedMacros = savedMacros.filter(savedMacro => savedMacro.name !== macro.name);
-            localStorage.setItem('savedMacros', JSON.stringify(updatedMacros));
-          }
+    // Função para remover uma macro salva localmente
+    function removeMacroLocally(macro) {
+      const savedMacros = JSON.parse(localStorage.getItem('savedMacros')) || [];
+      const updatedMacros = savedMacros.filter(savedMacro => savedMacro.name !== macro.name);
+      localStorage.setItem('savedMacros', JSON.stringify(updatedMacros));
+    }
 
 
 ///////////////////////////////////
@@ -625,16 +624,17 @@ function rollMacro(macro) {
 
 // Função para calcular o resultado da fórmula
 function calculateResult(formula) {
-  const match = formula.match(/(\d+)-(\d+)/);
+  const match = formula.match(/(\d+)-(\d+)([+\-]\d+)?/);
 
   if (match) {
     const minValue = parseInt(match[1]);
     const maxValue = parseInt(match[2]);
+    const modifier = match[3] ? parseInt(match[3]) : 0;
 
     // Verificar se os valores fornecidos são válidos
-    if (!isNaN(minValue) && !isNaN(maxValue)) {
-      // Calcular um valor aleatório dentro do intervalo
-      const result = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+    if (!isNaN(minValue) && !isNaN(maxValue) && !isNaN(modifier)) {
+      // Calcular um valor aleatório dentro do intervalo e adicionar o modificador
+      const result = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue + modifier;
       return result;
     } else {
       return "Valores inválidos no intervalo";
