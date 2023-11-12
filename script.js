@@ -182,6 +182,31 @@ function rollRoubar() {
   rollTableForParameter('Roubar', 'd100Result')
 }
 
+function rollHabilidade() {
+  texto = "(Habilidade)"
+  rollTableForParameter('Habilidade', 'd100Result')
+}
+function rollInteligência() {
+  texto = "(Inteligência)"
+  rollTableForParameter('Inteligência', 'd100Result')
+}
+function rollFlow() {
+  texto = "(Flow)"
+  rollTableForParameter('Flow', 'd100Result')
+}
+function rollMovimentação() {
+  texto = "(Movimentação)"
+  rollTableForParameter('Movimentação', 'd100Result')
+}
+function rollImobilizar() {
+  texto = "(Imobilizar)"
+  rollTableForParameter('Imobilizar', 'd100Result')
+}
+function rollSorte() {
+  texto = "(Sorte)"
+  rollTableForParameter('Sorte', 'd100Result')
+}
+
 
  // 1o botao
 function clearTable1() {
@@ -230,18 +255,39 @@ function clearTable2() {
   const IntimidarElement = document.getElementById("Intimidar");
   const RoubarElement = document.getElementById("Roubar"); 
 
+  const HabilidadeElement = document.getElementById("Habilidade");
+  const InteligênciaElement = document.getElementById("Inteligência");
+  const FlowElement = document.getElementById("Flow");
+  const MovimentaçãoElement = document.getElementById("Movimentação");
+  const ImobilizarElement = document.getElementById("Imobilizar");
+  const SorteElement = document.getElementById("Sorte");
+
   PercepcaoElement.value = '';
   AtirarElement.value = '';
   MirarElement.value = '';
   IntimidarElement.value = '';
   RoubarElement.value = '';
 
+  HabilidadeElement.value = '';
+  InteligênciaElement.value = ''; 
+  FlowElement.value = ''; 
+  MovimentaçãoElement.value = ''; 
+  ImobilizarElement.value = '';
+  SorteElement.value = ''; 
+
+
   localStorage.removeItem('valorPercepcao');
   localStorage.removeItem('valorAtirar');
   localStorage.removeItem('valorMirar');
   localStorage.removeItem('valorIntimidar');
   localStorage.removeItem('valorRoubar');
-
+  
+  localStorage.removeItem('valorHabilidade');
+  localStorage.removeItem('valorInteligência');
+  localStorage.removeItem('valorFlow');
+  localStorage.removeItem('valorMovimentação');
+  localStorage.removeItem('valorImobilizar');
+  localStorage.removeItem('valorSorte');
 }
 
 // iguala os valores dos elementos no html às constantes criadas
@@ -262,6 +308,12 @@ const MirarElement = document.getElementById("Mirar");
 const IntimidarElement = document.getElementById("Intimidar");
 const RoubarElement = document.getElementById("Roubar");
 
+const HabilidadeElement = document.getElementById("Habilidade");
+const InteligênciaElement = document.getElementById("Inteligência");
+const FlowElement = document.getElementById("Flow");
+const MovimentaçãoElement = document.getElementById("Movimentação");
+const ImobilizarElement = document.getElementById("Imobilizar");
+const SorteElement = document.getElementById("Sorte");
 
 
 // verifica se existem valores no localStorage e, se houver, preenche os campos de input
@@ -271,35 +323,27 @@ if (localStorage.getItem("valorForça")) {
 if (localStorage.getItem("valorMagia")) {
     MagiaElement.value = localStorage.getItem("valorMagia");
   }
-
 if (localStorage.getItem("valorEsquiva")) {
     EsquivaElement.value = localStorage.getItem("valorEsquiva");
   }
-
 if (localStorage.getItem("valorResistencia")) {
     ResistenciaElement.value = localStorage.getItem("valorResistencia");
   }
-
 if (localStorage.getItem("valorDestreza")) {
     DestrezaElement.value = localStorage.getItem("valorDestreza");
   }
-
 if (localStorage.getItem("valorProcurar")) {
     ProcurarElement.value = localStorage.getItem("valorProcurar");
   }
-
 if (localStorage.getItem("valorEscutar")) {
     EscutarElement.value = localStorage.getItem("valorEscutar");
   }
-
 if (localStorage.getItem("valorFurtividade")) {
     FurtividadeElement.value = localStorage.getItem("valorFurtividade");
   }
-
 if (localStorage.getItem("valorMedicina")) {
     MedicinaElement.value = localStorage.getItem("valorMedicina");
   }
-
 if (localStorage.getItem("valorLabia")) {
     LabiaElement.value = localStorage.getItem("valorLabia");
   }
@@ -309,87 +353,108 @@ if (localStorage.getItem("valorLabia")) {
   if (localStorage.getItem("valorPercepcao")) {
     PercepcaoElement.value = localStorage.getItem("valorPercepcao");
 }
-
 if (localStorage.getItem("valorAtirar")) {
     AtirarElement.value = localStorage.getItem("valorAtirar");
 }
-
 if (localStorage.getItem("valorMirar")) {
     MirarElement.value = localStorage.getItem("valorMirar");
 }
-
 if (localStorage.getItem("valorIntimidar")) {
     IntimidarElement.value = localStorage.getItem("valorIntimidar");
 }
-
 if (localStorage.getItem("valorRoubar")) {
     RoubarElement.value = localStorage.getItem("valorRoubar");
 }
 
 
 
+if (localStorage.getItem("valorHabilidade")) {
+  HabilidadeElement.value = localStorage.getItem("valorHabilidade");
+}
+if (localStorage.getItem("valorInteligência")) {
+  InteligênciaElement.value = localStorage.getItem("valorInteligência");
+}
+if (localStorage.getItem("valorFlow")) {
+  FlowElement.value = localStorage.getItem("valorFlow");
+}
+if (localStorage.getItem("valorMovimentação")) {
+  MovimentaçãoElement.value = localStorage.getItem("valorMovimentação");
+}
+if (localStorage.getItem("valorImobilizar")) {
+  ImobilizarElement.value = localStorage.getItem("valorImobilizar");
+}
+if (localStorage.getItem("valorSorte")) {
+  SorteElement.value = localStorage.getItem("valorSorte");
+}
+
 
 // adiciona um evento para salvar os valores no localStorage quando forem inseridos dados
 ForçaElement.addEventListener("input", () => {
     localStorage.setItem("valorForça", ForçaElement.value);
   });
-
 MagiaElement.addEventListener("input", () => {
     localStorage.setItem("valorMagia", MagiaElement.value);
   });
-
 EsquivaElement.addEventListener("input", () => {
     localStorage.setItem("valorEsquiva", EsquivaElement.value);
   });
-
 ResistenciaElement.addEventListener("input", () => {
     localStorage.setItem("valorResistencia", ResistenciaElement.value);
   });
-
 DestrezaElement.addEventListener("input", () =>{
   localStorage.setItem("valorDestreza", DestrezaElement.value);
 });
-
 ProcurarElement.addEventListener("input", () => {
   localStorage.setItem("valorProcurar", ProcurarElement.value);
 });
-
 EscutarElement.addEventListener("input", () => {
   localStorage.setItem("valorEscutar", EscutarElement.value);
 });
-
 FurtividadeElement.addEventListener("input", () => {
   localStorage.setItem("valorFurtividade", FurtividadeElement.value);
 });
-
 MedicinaElement.addEventListener("input", () => {
   localStorage.setItem("valorMedicina", MedicinaElement.value);
 });
-
 LabiaElement.addEventListener("input", () => {
   localStorage.setItem("valorLabia", LabiaElement.value);
 });
 
 
-
 PercepcaoElement.addEventListener("input", () => {
   localStorage.setItem("valorPercepcao", PercepcaoElement.value);
 });
-
 AtirarElement.addEventListener("input", () => {
   localStorage.setItem("valorAtirar", AtirarElement.value);
 });
-
 MirarElement.addEventListener("input", () => {
   localStorage.setItem("valorMirar", MirarElement.value);
 });
-
 IntimidarElement.addEventListener("input", () => {
   localStorage.setItem("valorIntimidar", IntimidarElement.value);
 });
-
 RoubarElement.addEventListener("input", () => {
   localStorage.setItem("valorRoubar", RoubarElement.value);
+});
+
+
+HabilidadeElement.addEventListener("input", () => {
+  localStorage.setItem("valorHabilidade", HabilidadeElement.value);
+});
+InteligênciaElement.addEventListener("input", () => {
+  localStorage.setItem("valorInteligência", Inteligência.value);
+});
+FlowElement.addEventListener("input", () => {
+  localStorage.setItem("valorFlow", FlowElement.value);
+});
+MovimentaçãoElement.addEventListener("input", () => {
+  localStorage.setItem("valorMovimentação", MovimentaçãoElement.value);
+});
+ImobilizarElement.addEventListener("input", () => {
+  localStorage.setItem("valorImobilizar", ImobilizarElement.value);
+});
+SorteElement.addEventListener("input", () => {
+  localStorage.setItem("valorSorte", SorteElement.value);
 });
 
 
