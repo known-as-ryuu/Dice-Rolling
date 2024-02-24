@@ -11,15 +11,13 @@
         flex: 1;
     }
 
-    /*  max-width: 12vh; */
-
 ul {
   list-style: none;
 }
 
-    body {
-        font-size: 20px;
-    }
+body {
+    font-size: 20px;
+}
 }
 
 *{
@@ -32,11 +30,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #2d2d30;
     opacity: 0; /* Inicialmente, o corpo da página é transparente */
-    transition: opacity 0.5s ease-in-out; /* Tempo de transição de 0.5 segundos com suavização */
 }
 
     body.loaded {
         opacity: 1; /* Quando a classe "loaded" é adicionada ao corpo, a opacidade é 1 (totalmente visível) */
+        animation: FadeIn .8s;
     }
 
 .resized-image {
@@ -57,7 +55,9 @@ ul {
     justify-items: center; /* Centraliza os itens horizontalmente */
     gap: 10px; /* Espaçamento entre os itens */
     margin: 50px;
-    
+    animation: FadeIn 1s;
+    transition: opacity 0.5s ease-in-out;
+
 }
 
 .dice {
@@ -81,12 +81,7 @@ ul {
 
 /* Ajuste o espaço entre as imagens e os botões */
 .dice-group {
-    display: flex;
-    flex-direction: column; /* Alinha os elementos verticalmente */
-    align-items: center; /* Centraliza os elementos horizontalmente */
-    flex: 1; /* Distribui o espaço igualmente entre os grupos */
     margin: 10px; /* Espaçamento entre os grupos */
-
 }
 
 .dice.d4 {
@@ -154,8 +149,7 @@ ul {
 .result-text {
     text-align: center;
     font-size: 20px;
-    margin-top: 5px;
-    display: inline; /* Mantenha o comportamento inline do resultado */
+    transition: content 1s;
 }
 
 .result p {
@@ -183,7 +177,9 @@ input[id="d100Input"] {
     border: 1px solid #ccc;
     border-radius: 1000px;
     font-size: 15px;
-    margin: 5px
+    margin: 5px;
+    width: 150px;
+    text-align: center;
 }
 
     /* Skin da barra de input quando o mouse passa por cima */
@@ -267,12 +263,11 @@ button.roll-button:hover {
 /* Skin da barra de input, para a tabela é outra coisa */
 input[class="d100Table"] {
     vertical-align: center;
-    border: 1px solid #3b3b3b;
+    border: 2px solid #3b3b3b;
     border-radius: 4px;
     font-size: 15px;
-    margin: 4px;
-    width: 5vh;
-    padding: 2px;
+    width: 4vh;
+    padding: 5px;
 }
 
     /* Skin da barra de input quando o mouse passa por cima */
@@ -288,22 +283,12 @@ input[class="d100Table"] {
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
     }
 
-    .d100Table input[type="number"] {
-        padding: 2px;
-        padding-left: 4px;
-        margin-top: -6px;
-        margin-bottom: 5px;
-    } 
-
     .black-bg {
         color: transparent;
-        background-color: rgb(58, 58, 58) !important;
-        vertical-align: center;
+        background-color: rgb(58, 58, 58);
+        vertical-align: 3px;
         border-radius: 4px;
-        max-height: 0.8rem;
-        max-width: 2rem;
-        line-height: 1rem;
-        margin-left: 3px;
+        width: 4vh;
         padding: 5px;
         pointer-events: none;
     }
@@ -314,14 +299,14 @@ input[class="d100Table"] {
     }
 
 
-    .d100Table2 input[type="number"]::-webkit-inner-spin-button,
+    /* .d100Table2 input[type="number"]::-webkit-inner-spin-button,
 .d100Table2 input[type="number"]::-webkit-outer-spin-button {
     margin-right: -2px;
-}
+} */
 
 
 
-.clearTable {
+/* .clearTable {
     padding: 4px 120px;
     background-color: #4d4d4d;
     color: white;
@@ -332,15 +317,14 @@ input[class="d100Table"] {
     transition: background-color 0.3s ease-in-out;
     margin-right: 8.7rem;
     margin-left: -8.2rem;
-    /* vertical-align: center; */
   }
     .clearTable:hover {
     background-color: #3b3b3b;
     }
   
 button.clearTable:hover {
-    box-shadow: 0px 0px 10px rgba(192, 194, 196, 0.4); /* Sombra quando o mouse passa por cima */
-}
+    box-shadow: 0px 0px 10px rgba(192, 194, 196, 0.4);
+} */
 
 
 
@@ -360,21 +344,32 @@ button.clearTable:hover {
 
 } */
 
-.historico {
+.historico > * {
     margin-top: initial;
     width: 260px;
     font-size: 15px;
-    max-height: 27rem;
-    overflow: auto;
+    animation: FadeIn .8s;
 }
-
+#hist {
+    border-bottom: 1px solid rgb(121, 121, 121);   
+}
+#consoleOutput > * {
+    border-top: 1px solid rgb(121, 121, 121);
+    animation: FadeIn 1s;
+}
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
 
 
 #toggleButton {
     position: relative;
     top: -5px;
     z-index: 1;
-    border: 5px solid rgba(0, 0, 0, 0);
+    border: 5px solid transparent;
 }
 
 .tabelas {
@@ -387,7 +382,7 @@ button.clearTable:hover {
 .d100Tabela, 
 .d100Table2,
 .historico {
-    border: 5px solid rgba(0, 0, 0, 0);
+    border: 5px solid transparent;
     width: 17rem;
 }
 #first {
@@ -462,8 +457,6 @@ button.clearTable:hover {
 }
 
 :root {
-    --color-primary: #A347FF;
-    --color-secondary: #7000AC;
     --color-smoky-black: #2d2d30;
     --color-light-black: #1F1F1F;
     --color-black: #0a0a0a;
@@ -472,7 +465,7 @@ button.clearTable:hover {
     --color-gray: rgba(255, 255, 255, .1);
     --color-off-white: rgba(255, 255, 255, .6);
     --color-red: #d9534f;
-    --color-green: #3d8b40
+    --color-green: #3d8b40;
 }
 
 
@@ -486,8 +479,8 @@ button.clearTable:hover {
     width: 16.4rem;
     background-color: var(--color-smocky-black);
     outline: 2px solid rgba(255, 255, 255, .25);
-    margin-bottom: 30px;
-    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-top: 30px;
     scale: 1.1;
 }
 
@@ -495,13 +488,13 @@ button.clearTable:hover {
     border: 2px solid var(--color-gray);
     border-radius: 8px;
     padding: 2px;
-    padding-left: 5px;
-    margin-left: 5px;
     background-color: var(--color-smocky-black);
     color: white;
     transition: transform 0.25s ease;
     width: 80px;
     margin-right: 10px;
+    text-align: center;
+
 }
 .randomizer-input:hover{
     transform: scale(1.1);
@@ -533,6 +526,7 @@ input::-webkit-inner-spin-button {
 #randomResult {
     color: white;
     margin-top: 10px;
+
 }
 .randomNumber-Color {
     color: #2cb9af; 
@@ -622,4 +616,11 @@ input::-webkit-inner-spin-button {
 }
 #new-macro-form {
     margin-top: 5px;
+}
+
+td,th {
+    border: 1px solid transparent;
+    outline: 2px solid rgb(121, 121, 121);
+    border-radius: 2px;
+    color: white;
 }

@@ -391,16 +391,16 @@ if (localStorage.getItem("valorSorte")) {
 // adiciona um evento para salvar os valores no localStorage quando forem inseridos dados
 ForçaElement.addEventListener("input", () => {
     localStorage.setItem("valorForça", ForçaElement.value);
-  });
+});
 MagiaElement.addEventListener("input", () => {
     localStorage.setItem("valorMagia", MagiaElement.value);
-  });
+});
 EsquivaElement.addEventListener("input", () => {
     localStorage.setItem("valorEsquiva", EsquivaElement.value);
-  });
+});
 ResistenciaElement.addEventListener("input", () => {
     localStorage.setItem("valorResistencia", ResistenciaElement.value);
-  });
+});
 DestrezaElement.addEventListener("input", () =>{
   localStorage.setItem("valorDestreza", DestrezaElement.value);
 });
