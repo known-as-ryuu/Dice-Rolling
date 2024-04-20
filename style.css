@@ -1,4 +1,16 @@
-﻿/* Estilos para dispositivos móveis */
+﻿:root {
+    --color-smoky-black: #2d2d30;
+    --color-light-black: #1F1F1F;
+    --color-black: #0a0a0a;
+    --color-dark-gray: rgba(255, 255, 255, 0.15);
+    --color-white: #fff;
+    --color-gray: rgba(255, 255, 255, .1);
+    --color-off-white: rgba(255, 255, 255, .6);
+    --color-red: #d9534f;
+    --color-green: #3d8b40;
+    --color-blue: #007acc;
+}
+/* Estilos para dispositivos móveis */
 @media (max-width: 1080px) {
 
     /* Adicione os estilos desejados aqui */
@@ -137,12 +149,12 @@ ul {
     .clear-button:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
-
 /* Resultado dos dados de cima */
 .result {
     text-align: center;
     font-size: 22px;
     margin-top: 20px;
+    display: none;
 }
 
 /* Resultado da barra de status */
@@ -184,14 +196,14 @@ input[id="d100Input"] {
 
     /* Skin da barra de input quando o mouse passa por cima */
     input[type="number"]:hover {
-        border-color: #007acc;
+        border-color: var(--color-blue);
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
     }
 
     /* Skin da barra de input quando esta focada */
     input[type="number"]:focus {
         outline: none;
-        border-color: #007acc;
+        border-color: var(--color-blue);
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
     }
 
@@ -214,7 +226,7 @@ input[id="d100Input"] {
 /* Skin do botao "Roll d100" */
 .roll-button {
     padding: 8px 10px;
-    background-color: #007acc;
+    background-color: var(--color-blue);
     color: white;
     border: none;
     border-radius: 1000px;
@@ -241,7 +253,7 @@ button.roll-button:hover {
 /* Botão d100 da tabela */
 .roll-table {
     padding: 4px 8px;
-    background-color: #007acc;
+    background-color: var(--color-blue);
     color: white;
     border: none;
     border-radius: 12px;
@@ -272,14 +284,14 @@ input[class="d100Table"] {
 
     /* Skin da barra de input quando o mouse passa por cima */
     input[class="d100Table"]:hover {
-        border-color: #007acc;
+        border-color: var(--color-blue);
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
     }
 
     /* Skin da barra de input quando esta focada */
     input[class="d100Table"]:focus {
         outline: none;
-        border-color: #007acc;
+        border-color: var(--color-blue);
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);
     }
 
@@ -456,20 +468,6 @@ button.clearTable:hover {
     border-radius: 4px
 }
 
-:root {
-    --color-smoky-black: #2d2d30;
-    --color-light-black: #1F1F1F;
-    --color-black: #0a0a0a;
-    --color-dark-gray: rgba(255, 255, 255, 0.15);
-    --color-white: #fff;
-    --color-gray: rgba(255, 255, 255, .1);
-    --color-off-white: rgba(255, 255, 255, .6);
-    --color-red: #d9534f;
-    --color-green: #3d8b40;
-}
-
-
-
 /* ---------------------------------------- */
 /* ---------------------------------------- */
 /* ---------------------------------------- */
@@ -531,9 +529,6 @@ input::-webkit-inner-spin-button {
 .randomNumber-Color {
     color: #2cb9af; 
 }
-
-
-
 
 
 /* ---------------------------------------- */
@@ -617,10 +612,151 @@ input::-webkit-inner-spin-button {
 #new-macro-form {
     margin-top: 5px;
 }
-
 td,th {
     border: 1px solid transparent;
     outline: 2px solid rgb(121, 121, 121);
     border-radius: 2px;
     color: white;
 }
+.modifiers {
+    display: flex;
+    justify-content: center;
+}
+.buffs {
+    margin: 20px;
+    width: 400px;
+    text-align: center;
+}
+#buff-select {
+    width: 20px;
+    background-color: rgb(45, 45, 48);
+    border: 2px solid rgb(121, 121, 121);
+    border-radius: 2px;
+    color: white;
+}
+#buff-select:hover {
+    border-color: var(--color-blue);
+    background-color: rgba(0, 106, 176, 0.2);
+}
+.atr-buffs {
+    appearance: none;
+    background-color: rgb(45, 45, 48);
+    color: #fff;
+    border: none;
+    padding: 2px;
+    transition: .5s ease;
+}
+.atr-buffs:hover {
+    background-color: rgba(134, 134, 148, 0.5);
+}
+.atr-buffs option {
+    background-color: rgb(45, 45, 48);
+}
+.atr {
+    position: relative;
+    padding: 5px;
+    height: 50%;
+    display: none;
+}
+.activeTable {
+    margin: 20px;
+    text-align: center; 
+}
+#active {
+    display: revert;
+}
+.empty {
+    padding: 0px 50px;                                                          
+}
+#items {
+    appearance: none;
+    color: rgb(211, 211, 211);
+    max-width: 120px;
+    background: none;
+    border: solid 2px var(--color-gray);
+    border-radius: 2px;
+    transition: 400ms;
+    padding: 0px 6px;
+    font-weight: 200;
+}
+#itens:hover {
+    border: 2px solid var(--color-blue);
+    background: rgba(0, 106, 176, 0.2);
+    border-radius: 2px;
+}
+#tooltip {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    font-family: sans-serif;
+    color: #fff;
+}
+#tooltipText {
+    position: absolute;
+    left: -10%;
+    transform: translateX(-30%) scale(.8);
+    background-color: #ffffff;
+    color: #000;
+    white-space: nowrap;
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    padding: 0px 4px;
+}
+#tooltipText::before {
+    content: "";
+    position: absolute;
+    left: 98%;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%) translateY(-2%);
+    border: 10px solid;
+    border-color: #ffffff #0000 #0000 #0000;
+}
+#tooltip:hover #tooltipText {
+    top: 0%;
+    visibility: visible;
+    opacity: 1;
+}
+.select {
+    appearance: none;
+    position: relative;
+    vertical-align: top;
+    margin: 0px;
+    padding: 6px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    transition: 500ms;
+}
+.select:hover {
+    border-color: lightgray;
+}
+.select:checked {
+    background-color: #2690d6b6;
+}
+.add {
+    appearance: none;
+    position: relative;
+    margin: 0px;
+    padding: 0px 45%;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    background-color: rgba(128, 128, 128, 0.7);
+    transition: 500ms;
+}
+.add:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.notas {
+    appearance: none;
+    color: white;
+    font-style: italic;
+    border: 15px solid #2d2d30;
+    border-radius: 8px;
+    width: 600px;
+    background-color: var(--color-smocky-black);
+    outline: 2px solid rgba(255, 255, 255, .25);
+    margin-bottom: 50px;
+    }

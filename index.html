@@ -229,6 +229,108 @@ function print(...values) {
         <hr class="rounded">
 
         <br>
+        <p style="font-style: italic; font-weight: bold;">Ainda não funciona ↓</p>
+        <!-- buffs -->
+        <div class="modifiers">
+            <table class="buffs">
+                <tr>
+                    <th>◊</th>
+                    <th>items</th>
+                    <th class="empty">Buffs</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" checked class="select"></td>
+                    <td><input id="items" type="text"></td>
+                    <td>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff1">
+                            <option>FOR</option><option>MAG</option><option>ESQ</option><option>RES</option>
+                            <option>DEX</option><option>PRC</option><option>ECT</option><option>FTV</option>
+                            <option>MED</option><option>LAB</option><option>SKL</option><option>INT</option>
+                            <option>FLW</option><option>MOV</option><option>IMO</option><option>LCK</option>
+                            <option>PER</option><option>ATR</option><option>MIR</option><option>ITM</option>
+                            <option>RBR</option></select>
+                            <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff2"></select>
+                            <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff3"></select>
+                    </td>
+                    <!-- +12 FOR | +14 DEX | +10 RES -->
+                </tr>
+                <tr>
+                    <td><input type="checkbox" checked class="select"></td>
+                    <td><input id="items" type="text"></td>
+                    <td>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff4"></select>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff5"></select>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff6"></select>
+                    </td>
+                    <!-- <td>+4 DEX | +20 PRC | +5 MED</td> -->
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td><input id="items" type="text"></td>
+                    <td>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff7"></select>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff8"></select>
+                        <input id="buff-select" type="number" maxlength="2"><select class="atr-buffs" name="atr-buffs" id="buff9"></select>
+                    </td>
+                    <!-- <td>+30 MAG | +3 ESQ | +8 ECT</td> -->
+                </tr>
+                    <td></td>
+                    <td><button class="add">+</button></td>
+                    <td></td>
+
+            </table>
+            <table class="activeTable">
+                <tr>
+                    <th class="atr" id="active">⬧</td>
+                    <th class="atr" id="active">FOR</th>
+                    <th class="atr">MAG</th>
+                    <th class="atr">ESQ</th>
+                    <th class="atr" id="active">RES</th>
+                    <th class="atr" id="active">DEX</th>
+                    <th class="atr" id="active">PRC</th>
+                    <th class="atr">ECT</th>
+                    <th class="atr">FTV</th>
+                    <th class="atr" id="active">MED</th>
+                    <th class="atr">LAB</th>
+                    <!-- 2nd -->
+                    <!-- <th class="atr">SKL</th>
+                    <th class="atr">INT</th>
+                    <th class="atr">FLW</th>
+                    <th class="atr">MOV</th>
+                    <th class="atr">IMO</th>
+                    <th class="atr">LCK</th>
+                    <th class="atr">PER</th>
+                    <th class="atr">ATR</th>
+                    <th class="atr">MIR</th>
+                    <th class="atr">ITM</th>
+                    <th class="atr">RBR</th>                     -->
+                </tr>
+                <tr>
+                    <th class="atr" id="active">Total</th>
+                    <td class="atr" id="active">12</td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr" id="active">10</td>
+                    <td class="atr" id="active">18</td>
+                    <td class="atr" id="active">20</td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr" id="active">5</td>
+                    <td class="atr"></td>
+                    <!-- <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td>
+                    <td class="atr"></td> -->
+                </tr>
+            </table>
+        </div>
 
         <button class="roll-table" onclick="toggleBackground()" id="toggleButton">Toggle Background</button>
 
@@ -241,7 +343,7 @@ function print(...values) {
             </tr>
 
             <tr>
-                <td><img src="Data/força (2).png" class="icone"> Força</td>
+                <td><div id="tooltip"><img src="Data/força (2).png" class="icone"><span id="tooltipText">FOR</span><span> Força</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Força"></span>
                     <button class="roll-table" onclick="rollForça()">
@@ -250,8 +352,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td>
-                    <img src="Data/magia (2).png" class="icone"> Magia</td>
+                <td><div id="tooltip"><img src="Data/magia (2).png" class="icone"><span id="tooltipText">MAG</span><span> Magia</span></div></td>
                     <td>
                         <input type="number" class="d100Table" class="d100Input" id="Magia">
                         <button class="roll-table" onclick="rollMagia()">
@@ -260,7 +361,7 @@ function print(...values) {
                     </td>
             </tr>
             <tr>
-                <td><img src="Data/esquiva.png" class="icone"> Esquiva</td>
+                <td><div id="tooltip"><img src="Data/esquiva.png" class="icone"><span id="tooltipText">ESQ</span><span> Esquiva</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Esquiva">
                     <button class="roll-table" onclick="rollEsquiva()">
@@ -269,7 +370,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/resistencia (2).png" class="icone"> Resistência</td>
+                <td><div id="tooltip"><img src="Data/resistencia (2).png" class="icone"><span id="tooltipText">RES</span><span> Resistência</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Resistência">
                     <button class="roll-table" onclick="rollResistência()">
@@ -278,7 +379,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/destreza (2).png" class="icone"> Destreza</td>
+                <td><div id="tooltip"><img src="Data/destreza (2).png" class="icone"><span id="tooltipText">DEX</span><span> Destreza</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Destreza">
                     <button class="roll-table" onclick="rollDestreza()">
@@ -287,7 +388,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/procurar.png" class="icone"> Procurar</td>
+                <td><div id="tooltip"><img src="Data/procurar.png" class="icone"><span id="tooltipText">PRC</span><span> Procurar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Procurar">
                     <button class="roll-table" onclick="rollProcurar()">
@@ -296,7 +397,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/escutar (2).png" class="icone"> Escutar</td>
+                <td><div id="tooltip"><img src="Data/escutar (2).png" class="icone"><span id="tooltipText">ECT</span><span> Escutar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Escutar">
                     <button class="roll-table" onclick="rollEscutar()">
@@ -305,7 +406,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/furtividade.png" class="icone"> Furtividade</td>
+                <td><div id="tooltip"><img src="Data/furtividade.png" class="icone"><span id="tooltipText">FTV</span><span> Furtividade</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Furtividade">
                     <button class="roll-table" onclick="rollFurtividade()">
@@ -314,7 +415,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/medicina (2).png" class="icone"> Medicina</td>
+                <td><div id="tooltip"><img src="Data/medicina (2).png" class="icone"><span id="tooltipText">MED</span><span> Medicina</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Medicina">
                     <button class="roll-table" onclick="rollMedicina()">
@@ -323,7 +424,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/labia2.png" class="icone"> Lábia</td>
+                <td><div id="tooltip"><img src="Data/labia2.png" class="icone"><span id="tooltipText">LAB</span><span> Lábia</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Lábia">
                     <button class="roll-table" onclick="rollLábia()">
@@ -341,7 +442,7 @@ function print(...values) {
                 <th>Status</th>
             </tr>
             <tr>
-                <td><img src="Data/skill.png" class="icone"> Habilidade</td>
+                <td><div id="tooltip"><img src="Data/skill.png" class="icone"><span id="tooltipText">SKL</span><span> Habilidade</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Habilidade">
                     <button class="roll-table" onclick="rollHabilidade()">
@@ -350,7 +451,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/int.png" class="icone"> Inteligência</td>
+                <td><div id="tooltip"><img src="Data/int.png" class="icone"><span id="tooltipText">INT</span><span> Inteligência</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Inteligência">
                     <button class="roll-table" onclick="rollInteligência()">
@@ -359,7 +460,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/flow2.png" class="icone"> Flow</td>
+                <td><div id="tooltip"><img src="Data/flow2.png" class="icone"><span id="tooltipText">FLW</span><span> Flow</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Flow">
                     <button class="roll-table" onclick="rollFlow()">
@@ -368,7 +469,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/mov.png" class="icone">Movimentação</td>
+                <td><div id="tooltip"><img src="Data/mov.png" class="icone"><span id="tooltipText">MOV</span><span>Movimentação</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Movimentação">
                     <button class="roll-table" onclick="rollMovimentação()">
@@ -377,7 +478,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/imobilizar.png" class="icone"> Imobilizar</td>
+                <td><div id="tooltip"><img src="Data/imobilizar.png" class="icone"><span id="tooltipText">IMO</span><span> Imobilizar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Imobilizar">
                     <button class="roll-table" onclick="rollImobilizar()">
@@ -386,7 +487,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/sorte.png" class="icone"> Sorte</td>
+                <td><div id="tooltip"><img src="Data/sorte.png" class="icone"><span id="tooltipText">LCK</span><span> Sorte</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Sorte">
                     <button class="roll-table" onclick="rollSorte()">
@@ -395,7 +496,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/modo.png" class="icone"> Percepção</td>
+                <td><div id="tooltip"><img src="Data/modo.png" class="icone"><span id="tooltipText">PER</span><span> Percepção</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Percepção">
                     <button class="roll-table" onclick="rollPercepção()">
@@ -404,8 +505,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td>
-                    <img src="Data/atirar.png" class="icone"> Atirar</td>
+                <td><div id="tooltip"><img src="Data/atirar.png" class="icone"><span id="tooltipText">ATR</span><span> Atirar</span></div></td>
                     <td>
                         <input type="number" class="d100Table" id="Atirar">
                         <button class="roll-table" onclick="rollAtirar()">
@@ -414,7 +514,7 @@ function print(...values) {
                     </td>
             </tr>
             <tr>
-                <td><img src="Data/mirar.png" class="icone"> Mirar</td>
+                <td><div id="tooltip"><img src="Data/mirar.png" class="icone"><span id="tooltipText">MIR</span><span> Mirar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Mirar">
                     <button class="roll-table" onclick="rollMirar()">
@@ -423,7 +523,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/intimidar.png" class="icone"> Intimidar</td>
+                <td><div id="tooltip"><img src="Data/intimidar.png" class="icone"><span id="tooltipText">ITM</span><span> Intimidar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Intimidar">
                     <button class="roll-table" onclick="rollIntimidar()">
@@ -432,7 +532,7 @@ function print(...values) {
                 </td>
             </tr>
             <tr>
-                <td><img src="Data/roubar.png" class="icone"> Roubar</td>
+                <td><div id="tooltip"><img src="Data/roubar.png" class="icone"><span id="tooltipText">RBR</span><span> Roubar</span></div></td>
                 <td>
                     <input type="number" class="d100Table" id="Roubar">
                     <button class="roll-table" onclick="rollRoubar()">
@@ -449,6 +549,11 @@ function print(...values) {
         </table>
     </div>
 </div> 
+<br>
+<div>
+    <p style="padding: 2px; font-weight: bold">- Notas -</p>
+    <textarea id="Notas" class="notas" rows="4" cols="50">Anotações aqui...</textarea>
+</div>
    
         <!-- D100 de status -->
         <div class="d100-calculation-container input-container">
@@ -527,12 +632,13 @@ function print(...values) {
             <br>
     </center>
 
-        <footer>
-            Made by: <br>
-            @known.as.ryuu on Discord <br>
-            @KnownAsRyuu on Twitter <br>
-            @known-as-ryuu on Github
-        </footer>
-        <script src="script.js"></script>
+    <footer>
+        Made by: <br>
+        @known.as.ryuu on Discord <br>
+        @KnownAsRyuu on Twitter <br>
+        @known-as-ryuu on Github
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

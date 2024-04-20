@@ -687,3 +687,34 @@ function calculateResult(formula) {
     });
 
 
+    $(document).ready(function(){
+      $('#buff1 option').clone().appendTo('#buff2');
+      $('#buff1 option').clone().appendTo('#buff3');
+      $('#buff1 option').clone().appendTo('#buff4');
+      $('#buff1 option').clone().appendTo('#buff5');
+      $('#buff1 option').clone().appendTo('#buff6');
+      $('#buff1 option').clone().appendTo('#buff7');
+      $('#buff1 option').clone().appendTo('#buff8');
+      $('#buff1 option').clone().appendTo('#buff9');
+  });
+
+      var input = document.getElementById("buff-select");
+      var maxLength = parseInt(input.getAttribute("maxlength"));
+  
+      input.addEventListener("input", function() {
+          if (input.value.length > maxLength) {
+              input.value = input.value.slice(0, maxLength);
+          }
+      });
+
+
+function notas() {
+const NotasElement = document.getElementById("Notas");
+if (localStorage.getItem("Notes")) {
+    NotasElement.value = localStorage.getItem("Notes");
+  }
+  NotasElement.addEventListener("input", () => {
+    localStorage.setItem("Notes", NotasElement.value);
+});
+}
+notas()
