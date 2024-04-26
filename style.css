@@ -760,3 +760,13 @@ td,th {
     outline: 2px solid rgba(255, 255, 255, .25);
     margin-bottom: 50px;
     }
+.not-working {
+    background-color: #3a3a3a;
+    width: min-content;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.low-opacity {
+    opacity: .2;
+    user-select: none;
+}
