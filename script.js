@@ -49,9 +49,9 @@ function roll() {
         var resultText = 'Resultado: ' + d100Roll;
 
     if (d100Roll === TriumphThreshold) {
-          resultText += ' - Triunfo!!! 👑';
+          resultText += ' - Triunfo!!! 👑'; console.log("Triunfo")
       } else if (d100Roll === DisasterThreshold) {
-          resultText += ' - Desastre!!! ⚰️';
+          resultText += ' - Desastre!!! ⚰️'; console.log("Desastre")
       } else if (d100Roll >= minusBigFailureThreshold && d100Roll <= plusBigFailureThreshold) {
           resultText += ' - Grande Falha';
       } else if (d100Roll >= minusFailureThreshold && d100Roll <= plusFailureThreshold) {
@@ -87,8 +87,10 @@ function rollTableForParameter(parameterName, resultElementId) {
 
   if (d100Roll === 1) {
     resultText += ' - Triunfo!!! 👑';
+    console.log("Triunfo")
   } else if (d100Roll === 100) {
     resultText += ' - Desastre!!! ⚰️';
+    console.log("Desastre")
   } else {
     if (d100Roll >= parameterValue * 1.50 && d100Roll <= 99) {
       resultText += ' - Grande Falha';
@@ -718,3 +720,74 @@ if (localStorage.getItem("Notes")) {
 });
 }
 notas()
+
+const BIGBOTAO = document.getElementById('BIGBOTAO');
+const TrnfOver = document.getElementById('TrnfOver');
+const DstrOver = document.getElementById('DstrOver');
+let originalHeight = null;
+
+function enableOverlayClick() {
+    TrnfOver.style.pointerEvents = 'auto';
+    DstrOver.style.pointerEvents = 'auto';
+}
+
+// BIGBOTAO.addEventListener('click', () => {
+function consoleTriunfo() {
+  // Show overlay
+  TrnfOver.style.opacity = '1';
+  TrnfOver.style.display = 'block';
+  // BIGBOTAO.style.display = 'none';
+
+  // Lock body height
+  originalHeight = document.body.style.height;
+  const viewportHeight = window.innerHeight + 'px';
+  document.body.style.height = viewportHeight;
+  document.body.classList.add('hidden-scroll');
+
+  TrnfOver.style.pointerEvents = 'none';
+  setTimeout(enableOverlayClick, 2500);
+};
+// Hide overlay
+TrnfOver.addEventListener('click', () => {
+  TrnfOver.style.opacity = '0';
+  TrnfOver.style.display = 'none';
+  // BIGBOTAO.style.display = 'block'; // Show the button again
+
+  // Restore body height and scrolling
+  document.body.style.height = originalHeight;
+  document.body.classList.remove('hidden-scroll');
+});
+function consoleDesastre() {
+  // BIGBOTAO.addEventListener('click', () => {
+// Show overlay
+  DstrOver.style.opacity = '1';
+  DstrOver.style.display = 'block';
+  // BIGBOTAO.style.display = 'none';
+
+  // Lock body height
+  originalHeight = document.body.style.height;
+  const viewportHeight = window.innerHeight + 'px';
+  document.body.style.height = viewportHeight;
+  document.body.classList.add('hidden-scroll');
+
+  DstrOver.style.pointerEvents = 'none';
+  setTimeout(enableOverlayClick, 2500);
+};
+// Hide overlay
+DstrOver.addEventListener('click', () => {
+  DstrOver.style.opacity = '0';
+  DstrOver.style.display = 'none';
+  // BIGBOTAO.style.display = 'block'; 
+  // Restore body height and scrolling
+  document.body.style.height = originalHeight;
+  document.body.classList.remove('hidden-scroll');
+});
+const originalConsoleLog = console.log;
+
+console.log = function (message) {
+  originalConsoleLog.apply(console, arguments); // Call the original console.log to preserve default behavior
+  if (message === "Triunfo") {  // Check if the message matches
+      consoleTriunfo(); }
+  if (message === "Desastre") {
+      consoleDesastre(); }
+}; 
